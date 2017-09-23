@@ -1,1 +1,57 @@
+/**
+ * <html> y <body> ocupan toda la pantalla sin salirse
+ * Todos los elementos tienen el cursor por defecto
+ */
+html, body {
+	width:    100vw;
+	height:   100vh;
+	margin:   0px;
+	padding:  0px;
+	position: absolute;
+	top:      0px;
+	right:    0px;
+	bottom:   0px;
+	left:     0px;
+	overflow: hidden;
+}
+* {
+	cursor: default;
+}
 
+/**
+ * Clases para dimensionar elementos en ancho y/o alto completo
+ */
+.full-width {
+	width:100vw;
+}
+.full-height {
+	height:100vh;
+}
+.full-viewport {
+	@extend .full-width;
+	@extend .full-height;
+}
+
+/**
+ * Clases para centrar contenido verticalmente
+ */
+div.vertical-center {
+	position: relative;
+	
+	& .vertical-center-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+span.vertical-center {
+	width: 100%;
+	display: table;
+	
+	& .vertical-center-content {
+		text-align: center;
+		vertical-align: middle;
+		display: table-cell;
+	}
+}
