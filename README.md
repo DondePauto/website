@@ -23,7 +23,7 @@ Este repositorio contiene el Tema de WordPress de nuestro sitio web, basado en [
 
 ```shell
 # @ example.com/wp-content/themes/
-$ git clone https://github.com/DondePauto/dondepauto-theme
+$ git clone https://github.com/DondePauto/theme
 ```
 
 2. Actualizar las dependencias de `composer`, `npm` y `bower`:
