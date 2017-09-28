@@ -17,13 +17,14 @@
 				"scripts/customizer.js"
 			]
 		},
-		"custom.js": {
-			"files": [
-				"scripts/navbar-side.js"
-			]
-		},
 		"jquery.js": {
 			"bower": ["jquery"]
+		},
+		"custom.js": {
+			"files": [
+				"scripts/extra/*.js",
+				"scripts/custom/*.js"
+			]
 		},
 		"fonts": {
 			"files": [

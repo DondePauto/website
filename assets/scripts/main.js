@@ -10,6 +10,9 @@
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
+// Perfect Scrollbar
+var ps;
+
 (function($) {
 	
 	// Use this variable to set up the common and page specific functions. If you
@@ -19,6 +22,9 @@
 		'common': {
 			init: function() {
 				// JavaScript to be fired on all pages
+				$(function() {
+					ps = new PerfectScrollbar("body", {suppressScrollX: true});
+				});
 			},
 			finalize: function() {
 				// JavaScript to be fired on all pages, after page specific JS is fired

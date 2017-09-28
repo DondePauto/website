@@ -1,4 +1,4 @@
-/* global jQuery */
+/* global jQuery, ps */
 (function($) {
 	$(function() {
 		// Enable collapse events when button or backdrop are clicked
@@ -23,12 +23,14 @@
 					$("header").removeAttr("temporal-toggle");
 					$(".navbar-backdrop").css("display", "none");
 					$(".wrap").css("position", "static");
+					ps = new PerfectScrollbar("body", {suppressScrollX: true});
 				}
 			};
 			if( $("header").attr("toggle")==="true" ) {
 				var expanded = $(".navbar-toggler").attr("aria-expanded");
 				var toLeft   = expanded==="true" ? "-75vw" : "0px";
 				if( expanded==="false" ) {
+					ps.destroy(); ps = null;
 					$(".wrap").css("position", "relative");
 					$(".navbar-backdrop").css("display", "block");
 				}
