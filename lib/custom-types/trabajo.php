@@ -90,9 +90,9 @@ function trabajo_columns_values( $column, $post_id ) {
             $status = rwmb_meta('trabajo_estado');
             switch( $status ) {
                 case 'Abierto': ?>
-                    <h3><span class="label label-success">Abierto</span></h3><?php break;
+                    <h3 style="margin: 0px;"><span class="label label-success">Abierto</span></h3><?php break;
                 case 'Cerrado': ?>
-                    <h3><span class="label label-default">Cerrado</span></h3><?php break;
+                    <h3 style="margin: 0px;"><span class="label label-default">Cerrado</span></h3><?php break;
                 default: break;
             } break;
         default: break;
