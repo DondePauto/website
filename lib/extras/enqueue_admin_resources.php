@@ -20,6 +20,10 @@ function enqueue_admin_resources() {
 add_action('admin_head', __NAMESPACE__ . '\\replace_admin_fonticons');
 function replace_admin_fonticons() { ?>
     <style type="text/css">
+        #adminmenu .menu-icon-espacio div.wp-menu-image:before {
+            font-family: voyager !important;
+            content: '\4d';
+        }
         #adminmenu .menu-icon-trabajo div.wp-menu-image:before {
             font-family: FontAwesome !important;
             content: '\f0b1';

@@ -7,8 +7,9 @@ namespace Roots\Sage\Extras;
  *
  * @return null
  */
-add_action('admin_menu', __NAMESPACE__ . '\\trabajo_remove_normal_excerpt');
-function trabajo_remove_normal_excerpt() {
+add_action('admin_menu', __NAMESPACE__ . '\\remove_normal_excerpt');
+function remove_normal_excerpt() {
+    remove_meta_box('postexcerpt' , 'espacio' , 'normal');
     remove_meta_box('postexcerpt' , 'trabajo' , 'normal');
 }
 
@@ -18,11 +19,11 @@ function trabajo_remove_normal_excerpt() {
  * @param  string $post_type
  * @return null
  */
-add_action('add_meta_boxes', __NAMESPACE__ . '\\trabajo_add_excerpt_meta_box');
-function trabajo_add_excerpt_meta_box( $post_type ) {
-    if( $post_type=='trabajo' ) {
+add_action('add_meta_boxes', __NAMESPACE__ . '\\add_excerpt_meta_box');
+function add_excerpt_meta_box( $post_type ) {
+    if( $post_type=='espacio' or $post_type=='trabajo' ) {
         add_meta_box(
-            'trabajo_postexcerpt',
+            $post_type.'_postexcerpt',
             __('Excerpt', 'dondepauto'),
             'post_excerpt_meta_box',
             $post_type,

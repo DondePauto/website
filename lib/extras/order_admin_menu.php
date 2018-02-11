@@ -21,7 +21,6 @@ function custom_admin_menu_order( $menu_order ) {
         'edit.php',                    // Posts
         'edit.php?post_type=espacio',  // Espacios
         'edit.php?post_type=trabajo',  // Trabajos
-        'upload.php',                  // Media
         'separator2',                  // Second separator
         'themes.php',                  // Appearance
         'plugins.php',                 // Plugins
