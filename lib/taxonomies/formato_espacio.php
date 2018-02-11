@@ -21,7 +21,7 @@ function register_escenario_espacio_taxonomy() {
         'view_item'                  => 'Ver escenario',
         'separate_items_with_commas' => 'Separar escenarios con comas',
         'add_or_remove_items'        => 'Agregar o quitar escenarios',
-        'choose_from_most_used'      => 'Escoger de los más usadas',
+        'choose_from_most_used'      => 'Escoger de los más usados',
         'popular_items'              => 'Escenarios populares',
         'search_items'               => 'Buscar escenarios',
         'not_found'                  => 'Escenario no encontrado',

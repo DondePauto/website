@@ -21,7 +21,7 @@ function register_formato_espacio_taxonomy() {
         'view_item'                  => 'Ver formato',
         'separate_items_with_commas' => 'Separar formatos con comas',
         'add_or_remove_items'        => 'Agregar o quitar formatos',
-        'choose_from_most_used'      => 'Escoger de los más usadas',
+        'choose_from_most_used'      => 'Escoger de los más usados',
         'popular_items'              => 'Formatos populares',
         'search_items'               => 'Buscar formatos',
         'not_found'                  => 'Formato no encontrado',
