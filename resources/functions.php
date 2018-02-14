@@ -54,11 +54,14 @@ if (!class_exists('Roots\\Sage\\Container')) {
  * Add or remove files to the array as needed. Supports child theme overrides.
  */
 array_map(function ($file) use ($sage_error) {
-    $file = "../app/{$file}.php";
+    $file = str_replace(__DIR__.'/../app/', '', $file);
+    if( strpos($file, 'controllers')===0 )
+        return;
+    $file = '../app/'.$file;
     if (!locate_template($file, true, true)) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
     }
-}, ['helpers', 'setup', 'filters', 'admin']);
+}, array_merge(glob(__DIR__.'/../app/**/*.php'), glob(__DIR__.'/../app/*.php')));
 
 /**
  * Here's what's happening with these hooks:
