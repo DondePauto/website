@@ -1,45 +1,43 @@
-<p align="center"><img src="http://dondepauto.co/newsletter/images/v3/newsletterMainHeaderDPLogo.png"></p>
-
-## [DondePauto](http://dondepauto.co)
+<p align="center"><img src="https://files.dondepauto.co/brand/logo-black.png?w=500"></p>
 
 ### Descripción
 
 En DóndePauto encuentras los medios publicitarios más efectivos para tu negocio y asesoría especializada para que llegues a tus verdaderos clientes.
 
-Este repositorio contiene el Tema de WordPress de nuestro sitio web, basado en [Sage](https://roots.io/sage)
+Este repositorio contiene el Tema de WordPress de nuestro sitio web, basado en [Sage](https://roots.io/sage).
 
 ### Requerimientos
 
-| Prerequisito    | Cómo verificar | Cómo instalar
-| --------------- | -------------- | ------------- |
-| PHP >= 5.4.x    | `php -v`       | [php.net](http://php.net/manual/en/install.php) |
-| Node.js >= 4.5  | `node -v`      | [nodejs.org](http://nodejs.org/) |
-| gulp >= 3.8.10  | `gulp -v`      | `npm install -g gulp` |
-| Bower >= 1.3.12 | `bower -v`     | `npm install -g bower` |
+| Prerequisito     | Cómo verificar   | Cómo instalar                                       |
+| ---------------- | ---------------- | --------------------------------------------------- |
+| WordPress >= 4.7 | wp-admin         | [Bedrock](https://roots.io/bedrock)                 |
+| PHP >= 7.0       | `php -v`         | [php.net](http://php.net/manual/en/install.php)     |
+| Composer         | `which composer` | [getcomposer.org](https://getcomposer.org/download) |
+| Node.js >= 6.9.x | `node -v`        | [nodejs.org](http://nodejs.org/)                    |
+| Yarn             | `which yarn`     | [yarnpkg.com](https://yarnpkg.com/en/docs/install)  |
 
 ### Instalación
 
 1. Clonar el repositorio dentro del directorio de temas de WordPress:
 
 ```shell
-# @ example.com/wp-content/themes/
-$ git clone https://github.com/DondePauto/theme
+# @ example.com/app/themes/
+$ git clone https://github.com/DondePauto/wp-theme
 ```
 
-2. Actualizar las dependencias de `composer`, `npm` y `bower`:
+2. Actualizar las dependencias de `composer` y `npm`:
 
 ```shell
 $ composer update
 $ npm install
-$ bower install
 ```
 
-3. Compilar las dependencias usando `gulp`:
+3. Compilar las dependencias usando `yarn`:
 
 ```shell
-$ gulp               # Compila y optimiza los recursos
-$ gulp watch         # Compila los recursos cuando se realizan cambios
-$ gulp --production  # Compila los recursos para el ambiente de producción.
+$ yarn run build             # Compila y optimiza los recursos
+$ yarn run build --watch     # Compila los recursos cuando se realizan cambios
+$ yarn run build:production  # Compila los recursos para el ambiente de producción.
 ```
 
 ### Contacto

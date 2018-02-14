@@ -1,0 +1,124 @@
+/**
+ * Estilos de la barra de navegación
+ */
+.navbar {
+  padding: 0;
+  font-size: 14px;
+  background: #333 !important;
+
+  .navbar-toggler {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    color: white;
+    border: 1px solid transparent;
+    border-right: 1px solid #1a1a1a;
+    outline: none !important;
+    position: absolute;
+  }
+
+  .navbar-brand {
+    @extend .full-width;
+
+    margin: 0 auto;
+    padding: 5px 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .navbar-backdrop {
+    @extend body;
+
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    display: none;
+    z-index: 5000;
+  }
+
+  .navbar-collapse {
+    @extend .full-height;
+
+    width: 70vw;
+    background-color: $dark !important;
+    position: absolute;
+    top: 0;
+    left: -70vw;
+    z-index: 6000;
+    box-shadow: inset -5px 0 5px 0 #1c1c1c;
+    -moz-box-shadow: inset -5px 0 5px 0 #1c1c1c;
+    -webkit-box-shadow: inset -5px 0 5px 0 #1c1c1c;
+
+    .nav-link {
+      padding: 16.5px 12px;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: left;
+      color: white !important;
+      border-bottom: 1px solid #262626;
+    }
+
+    #link-home {
+      .nav-link {
+        padding: 9.5px 6px;
+      }
+    }
+
+    .nav-separator {
+      border-left: 1px solid $lightblue;
+      margin: 15px 10px;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .navbar {
+    padding: 25px;
+    background: transparent !important;
+
+    .navbar-brand {
+      width: auto;
+    }
+
+    .navbar-collapse {
+      width: auto;
+      height: auto;
+      background: transparent !important;
+      position: unset;
+      box-shadow: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+
+      .nav-link {
+        font-size: 16px;
+        border-bottom: 1px solid transparent;
+      }
+
+      .nav-link:not(.btn):hover {
+        color: $orange;
+      }
+
+      .nav-link.btn {
+        margin: 13.5px 3px;
+        padding: 3px 9px;
+        font-size: 14px;
+      }
+
+      .nav-link.btn-orange {
+        background: $orange;
+
+        &:hover {
+          background: darken($orange, 7.5%);
+        }
+      }
+
+      .nav-link.btn-orange-dark {
+        border: 1px solid $orange;
+        background: rgba(0, 0, 0, 0.5);
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.75);
+        }
+      }
+    }
+  }
+}
