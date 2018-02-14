@@ -21,6 +21,14 @@ body {
 }
 
 /**
+ * Los elementos <a> tienen el puntero como cursor
+ */
+a,
+a * {
+  cursor: pointer;
+}
+
+/**
  * Clases para dimensionar elementos en ancho y/o alto completo
  */
 .full-width {

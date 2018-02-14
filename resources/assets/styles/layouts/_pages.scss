@@ -1,0 +1,20 @@
+/**
+ * Clases para posicionar y dimensionar el contenedor principal
+ */
+.main {
+  @extend .full-viewport;
+
+  height: calc(100vh - 45px);
+  margin: 0 -15px;
+  background: lightgray;
+  position: absolute;
+  top: 45px;
+  overflow: hidden;
+}
+
+@include media-breakpoint-up(sm) {
+  .main {
+    height: 100vh;
+    top: 0;
+  }
+}
