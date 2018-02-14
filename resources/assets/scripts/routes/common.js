@@ -1,6 +1,16 @@
 /* global $ */
+import PerfectScrollbar from 'perfect-scrollbar';
+
 export default {
     init() {
+        /**
+         * Initialize Perfect Scrollbar
+         */
+        var ps;
+        $(function() {
+            ps = new PerfectScrollbar('.main', {suppressScrollX: true}); ps.update();
+        });
+
         /**
          * Enables navbar collapse from the left side
          */
@@ -13,7 +23,6 @@ export default {
 
             // Handle navigation bar toggle collapse events
             $('header [data-toggle=collapse]').click(function() {
-                console.log( this );
                 var STEP = function( current, animation ) {
                     var expanded = $('.navbar-toggler').attr('aria-expanded');
                     var limit = expanded==='true' ? animation.end : animation.start;

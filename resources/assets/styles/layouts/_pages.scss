@@ -6,10 +6,9 @@
 
   height: calc(100vh - 45px);
   margin: 0 -15px;
-  background: lightgray;
   position: absolute;
   top: 45px;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 @include media-breakpoint-up(sm) {

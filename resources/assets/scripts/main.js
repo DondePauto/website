@@ -1,8 +1,8 @@
 // import external dependencies
 import 'jquery';
 
-// Import everything from autoload
-import "./autoload/**/*"
+// Import dependencies
+import 'bootstrap';
 
 // import local dependencies
 import Router from './util/Router';

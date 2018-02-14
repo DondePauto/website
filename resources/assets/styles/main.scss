@@ -4,8 +4,9 @@
 // Fonts
 @import "fonts/montserrat";
 
-/** Import everything from autoload */
-@import "./autoload/**/*";
+/** Import dependencies */
+@import "~bootstrap/scss/bootstrap";
+@import "~perfect-scrollbar/css/*";
 
 /**
  * Import npm dependencies
