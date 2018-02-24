@@ -1,25 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html @php( language_attributes() )>
-    @include('partials.head')
+@include('partials.head')
 
-    <body @php( body_class() )>
-        @php( do_action('get_header') )
+<body @php( body_class() )>
+    @php( do_action('get_header') )
+
+    <div class="main" role="document">
         @include('partials.header')
 
-        <div class="wrap container-fluid" role="document">
-            <div class="content">
-                <main class="main">
-                    @yield('content')
-                </main>
-                @if( App\display_sidebar() )
-                    <aside class="sidebar">
-                        @include('partials.sidebar')
-                    </aside>
-                @endif
-            </div>
+        <div class="content">
+            @yield('content')
         </div>
-        @php( do_action('get_footer') )
+
         @include('partials.footer')
-        @php( wp_footer() )
-    </body>
+    </div>
+
+    @php( do_action('get_footer') )
+    @php( wp_footer() )
+</body>
 </html>

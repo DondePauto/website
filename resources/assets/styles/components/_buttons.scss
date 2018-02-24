@@ -1,0 +1,19 @@
+/**
+ * Estilos de los botones
+ */
+.btn-orange {
+  background: $orange;
+
+  &:hover {
+    background: darken($orange, 7.5%);
+  }
+}
+
+.btn-orange-dark {
+  border: 1px solid $orange;
+  background: rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}

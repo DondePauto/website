@@ -102,23 +102,6 @@
         padding: 3px 9px;
         font-size: 14px;
       }
-
-      .nav-link.btn-orange {
-        background: $orange;
-
-        &:hover {
-          background: darken($orange, 7.5%);
-        }
-      }
-
-      .nav-link.btn-orange-dark {
-        border: 1px solid $orange;
-        background: rgba(0, 0, 0, 0.5);
-
-        &:hover {
-          background: rgba(0, 0, 0, 0.75);
-        }
-      }
     }
   }
 }

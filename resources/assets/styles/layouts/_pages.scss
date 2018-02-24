@@ -5,10 +5,9 @@
   @extend .full-viewport;
 
   height: calc(100vh - 45px);
-  margin: 0 -15px;
   position: absolute;
   top: 45px;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 @include media-breakpoint-up(sm) {

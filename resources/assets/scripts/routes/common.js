@@ -4,11 +4,16 @@ import PerfectScrollbar from 'perfect-scrollbar';
 export default {
     init() {
         /**
-         * Initialize Perfect Scrollbar
+         * Set the minimum height for the main content and initialize Perfect Scrollbar
          */
-        var ps;
-        $(function() {
-            ps = new PerfectScrollbar('.main', {suppressScrollX: true}); ps.update();
+        var ps; $(function() {
+            $(window).resize(function() {
+                var min_height = $(window).height() - $('footer').height() - parseInt($('.main').css('top'), 10);
+                $('.main>.content').css('minHeight', (min_height - (parseInt($(window).width(), 10)<576 ? 10 : 0))+'px');
+
+                if( ps ) ps.destroy();
+                ps = new PerfectScrollbar('.main', {suppressScrollX: true}); ps.update();
+            }).resize();
         });
 
         /**
@@ -26,7 +31,7 @@ export default {
                 var STEP = function( current, animation ) {
                     var expanded = $('.navbar-toggler').attr('aria-expanded');
                     var limit = expanded==='true' ? animation.end : animation.start;
-                    $('.navbar-toggler, .navbar-brand, .wrap').css('left', (current-limit) + animation.unit);
+                    $('.navbar-toggler, .navbar-brand, .main').css('left', (current-limit) + animation.unit);
                     $('.navbar-backdrop').css('opacity', Math.abs((current-limit)/limit));
                 };
                 var COMPLETE = function() {
@@ -42,7 +47,7 @@ export default {
                     var expanded = $('.navbar-toggler').attr('aria-expanded');
                     var toLeft   = expanded==='true' ? ('-'+$('.navbar-collapse').width()+'px') : '0px';
                     if( expanded==='false' ) {
-                        $('.wrap').css('position', 'relative');
+                        $('.main').css('position', 'relative');
                         $('.navbar-backdrop').css('display', 'block');
                     }
                     $('.navbar-collapse').animate({left: toLeft}, {duration: 500, step: STEP, complete: COMPLETE});

@@ -1,7 +1,7 @@
 <header class="navbar navbar-expand-sm fixed-top">
     <a href="{{ home_url('/') }}" class="navbar-brand">
         <img src="https://files.dondepauto.co/brand/logo-white.png?h=35" class="d-inline d-sm-none">
-        <img src="https://files.dondepauto.co/brand/logo-white.png?h=50" class="d-none d-sm-block">
+        <img src="https://files.dondepauto.co/brand/logo-white.png?h=50" class="d-none d-sm-inline">
     </a>
     <button type="button" class="navbar-toggler" data-toggle="collapse"
         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item d-block d-sm-none" id="link-home">
                 <a class="nav-link" href="{{ home_url('/') }}">
-                    <img src="https://files.dondepauto.co/brand/logo-icon-h.png?h=35&color=white">
+                    <img src="https://files.dondepauto.co/brand/logo-white.png?h=35&color=white">
                 </a>
             </li>
             <li class="nav-item">
