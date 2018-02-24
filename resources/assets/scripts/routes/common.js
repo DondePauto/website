@@ -41,12 +41,14 @@ export default {
                         $('header').attr('toggle', 'false');
                         $('header').removeAttr('temporal-toggle');
                         $('.navbar-backdrop').css('display', 'none');
+                        ps = new PerfectScrollbar('.main', {suppressScrollX: true}); ps.update();
                     }
                 };
                 if( $('header').attr('toggle')==='true' ) {
                     var expanded = $('.navbar-toggler').attr('aria-expanded');
                     var toLeft   = expanded==='true' ? ('-'+$('.navbar-collapse').width()+'px') : '0px';
                     if( expanded==='false' ) {
+                        ps.destroy(); ps = null;
                         $('.main').css('position', 'relative');
                         $('.navbar-backdrop').css('display', 'block');
                     }

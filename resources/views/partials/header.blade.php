@@ -23,13 +23,13 @@
             </li>
             <li class="nav-item nav-separator d-none d-sm-block"></li>
             <li class="nav-item">
-                <a class="nav-link btn btn-orange" href="{{ home_url('/registro') }}">Regístrate</a>
+                <a class="nav-link btn btn-nav-orange" href="{{ home_url('/registro') }}">Regístrate</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-orange" data-toggle="modal" data-target="#modal-login">Ingresa</a>
+                <a class="nav-link btn btn-nav-orange" data-toggle="modal" data-target="#modal-login">Ingresa</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-orange-dark" href="{{ home_url('/registro') }}">Vende tus espacios</a>
+                <a class="nav-link btn btn-nav-orange-dark" href="{{ home_url('/registro') }}">Vende tus espacios</a>
             </li>
         </ul>
     </div>
