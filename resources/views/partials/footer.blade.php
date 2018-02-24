@@ -1,8 +1,8 @@
 <footer class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-3 col-xl-2 text-center">
-            <img src="https://files.dondepauto.co/brand/logo-white.png?h=35&color=white" class="d-inline d-sm-none">
-            <img src="https://files.dondepauto.co/brand/logo-white.png?h=50&color=white" class="d-none d-sm-inline">
+            <img src="https://files.dondepauto.co/brand/logo-light.png?h=35&color=white" class="d-inline d-sm-none">
+            <img src="https://files.dondepauto.co/brand/logo-light.png?h=50&color=white" class="d-none d-sm-inline">
         </div>
         <div class="col-12 col-sm-6 col-xl-4" id="page-links">
             <table class="table">

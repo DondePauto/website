@@ -1,4 +1,4 @@
-<p align="center"><img src="https://files.dondepauto.co/brand/logo-black.png?w=500"></p>
+<p align="center"><img src="https://files.dondepauto.co/brand/logo-dark.png?w=500"></p>
 
 ### Descripción
 
