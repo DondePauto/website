@@ -30,7 +30,13 @@
         </div>
         <div class="col-12 col-sm-3 col-xl-2 text-center">
             <hr class="d-block d-sm-none">
-            <b class="text-orange" id="phone">+57 315 215 5050<br></b>
+            <b class="text-orange" id="phone">
+                <?php $telefonos = json_decode(voyager_setting('contacto.telefonos')); ?>
+                @foreach( $telefonos as $telefono )
+                    {{ $telefono->value }}<br>
+                @endforeach
+            </b>
+            <br>
             <a href="//facebook.com/dondepauto" target="_blank" class="fa-stack fa-lg">
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x"></i>
