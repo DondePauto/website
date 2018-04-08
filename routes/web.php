@@ -12,7 +12,7 @@
 
 Route::get('', function() {
     return view('dondepauto::index');
-});
+})->name('home');
 
 // Hojas de estilo y scripts globales
 Route::get('style.css', function() {
