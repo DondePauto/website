@@ -1,51 +1,32 @@
 {
-  "name": "roots/sage",
-  "type": "wordpress-theme",
-  "license": "MIT",
-  "description": "WordPress starter theme with a modern development workflow",
-  "homepage": "https://roots.io/sage/",
-  "authors": [
-    {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
+    "name": "dondepauto/website",
+    "description": "Paquete de Laravel para gestionar el sitio web y Marketplace de DóndePauto",
+    "type": "laravel",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "DóndePauto.CO",
+            "email": "development@dondepauto.co"
+        },
+        {
+            "name": "Andrés Felipe Torres",
+            "homepage": "https://github.com/felipeandres254"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.5.0",
+        "dondepauto/backend": "dev-master"
     },
-    {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
+    "autoload": {
+        "psr-4": {
+            "DondePauto\\Website\\": "src/"
+        }
     },
-    {
-      "name": "QWp6t",
-      "email": "hi@qwp6t.me",
-      "homepage": "https://github.com/qwp6t"
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DondePauto\\Website\\WebsiteServiceProvider"
+            ]
+        }
     }
-  ],
-  "keywords": ["wordpress"],
-  "support": {
-    "issues": "https://github.com/roots/sage/issues",
-    "forum": "https://discourse.roots.io/"
-  },
-  "autoload": {
-    "psr-4": {
-      "App\\": "app/"
-    }
-  },
-  "require": {
-    "php": ">=7",
-    "composer/installers": "~1.0",
-    "illuminate/support": "~5.4",
-    "roots/sage-lib": "~9.0.0-beta.4",
-    "soberwp/controller": "~9.0.0-beta.4"
-  },
-  "require-dev": {
-    "squizlabs/php_codesniffer": "^2.8.0",
-    "roots/sage-installer": "~1.3"
-  },
-  "scripts": {
-    "test": ["phpcs"],
-    "post-create-project-cmd": [
-      "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"
-    ]
-  }
 }

@@ -29,6 +29,14 @@ a * {
 }
 
 /**
+ * Los elementos <input> tienen el puntero como texto
+ */
+input[type=text],
+input[type=password] {
+  cursor: text;
+}
+
+/**
  * Clases para dimensionar elementos en ancho y/o alto completo
  */
 .full-width {

@@ -8,8 +8,8 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/app/themes/dondepauto",
-  "devUrl": "http://dev.dondepauto.co",
+  "publicPath": "/app/themes/sage",
+  "devUrl": "http://example.test",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

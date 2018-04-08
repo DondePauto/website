@@ -9,7 +9,7 @@ export default {
         var ps; $(function() {
             $(window).resize(function() {
                 var min_height = $(window).height() - $('footer').height() - parseInt($('.main').css('top'), 10);
-                $('.main>.content').css('minHeight', (min_height - (parseInt($(window).width(), 10)<576 ? 10 : 0))+'px');
+                $('.main>.container-fluid').css('minHeight', (min_height - (parseInt($(window).width(), 10)<576 ? 10 : 0))+'px');
 
                 if( ps ) ps.destroy();
                 ps = new PerfectScrollbar('.main', {suppressScrollX: true}); ps.update();
