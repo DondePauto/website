@@ -4,7 +4,8 @@ import PerfectScrollbar from 'perfect-scrollbar';
 export default {
     init() {
         /**
-         * Set the minimum height for the main content and initialize Perfect Scrollbar
+         * Establece la altura mínima del contenedor principal.
+         * Inicialización de Perfect Scrollbar.
          */
         var ps; $(function() {
             $(window).resize(function() {
@@ -17,16 +18,16 @@ export default {
         });
 
         /**
-         * Enables navbar collapse from the left side
+         * Habilita el colapso de la barra de navigación desde el lado izquierdo.
          */
         $(function() {
-            // Enable collapse events when button or backdrop are clicked
+            // Habilita el colapso cuando hacemos click sobre el botón o el fondo.
             $('.navbar-toggler, .navbar-backdrop').click(function() {
                 $('header').attr('temporal-toggle', $('header').attr('toggle'));
                 $('header').attr('toggle', 'true');
             });
 
-            // Handle navigation bar toggle collapse events
+            // Respuesta al cambio de estado de colapso de la barra de navegación.
             $('header [data-toggle=collapse]').click(function() {
                 var STEP = function( current, animation ) {
                     var expanded = $('.navbar-toggler').attr('aria-expanded');
