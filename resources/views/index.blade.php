@@ -1,0 +1,1 @@
+@extends('dondepauto::website.base')

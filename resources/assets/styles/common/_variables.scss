@@ -1,0 +1,19 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+// stylelint-disable
+
+// Colors
+$red: #ed5242 !default;
+$orange: #ffac1a !default;
+$lightblue: #00aeef !default;
+$dark: #333333 !default;
+$darkgray: #4d4d4d !default;
+
+// Options
+$enable-rounded: false !default;
+
+// Fonts
+$font-family-sans-serif: Montserrat, sans-serif;
+
+// stylelint-enable

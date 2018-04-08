@@ -1,0 +1,32 @@
+{
+    "name": "dondepauto/website",
+    "description": "Paquete de Laravel para gestionar el sitio web y Marketplace de DóndePauto",
+    "type": "laravel",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "DóndePauto.CO",
+            "email": "development@dondepauto.co"
+        },
+        {
+            "name": "Andrés Felipe Torres",
+            "homepage": "https://github.com/felipeandres254"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.5.0",
+        "dondepauto/backend": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "DondePauto\\Website\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DondePauto\\Website\\WebsiteServiceProvider"
+            ]
+        }
+    }
+}
