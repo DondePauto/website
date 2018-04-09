@@ -20,59 +20,91 @@
             </div>
         </div>
     </div>
+    <div class="row text-center full-viewport vertical-center" id="banner-info">
+        <div class="full-width vertical-center-content">
+            <img src="images/home/icon-info.png">
+            <h2>Haz crecer tu negocio con publicidad efectiva</h2>
+            <p>En DóndePauto encuentras los medios publicitarios más efectivos para tu negocio y asesoría especializada para que llegues a tus verdaderos clientes.</p>
+            <p>Contamos con más de 800 espacios de pauta en todo Colombia para que puedas dar a conocer tu empresa y aumentar la confianza de los clientes que ya te conocen.</p>
+        </div>
+    </div>
 @endsection
 
 @section('css')
 <style type="text/css">
-    [id^=banner-] .full-width {
-        width: calc(100vw - 60px);
-        padding: 0 30px;
-    }
-    #banner-buscar {
-        color: white;
+    [id^=banner-] {
+        height: calc(100vh - 45px);
         background-color: lightgray;
-        background-image: url(images/home/banner-buscar.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }
+    [id^=banner-] .full-width {
+        width: calc(100vw - 30px);
+        padding: 0 15px;
+    }
+    #banner-buscar {
+        color: white;
+        background-image: url(images/home/banner-buscar.png);
+    }
+    #banner-buscar h1 {
+        font-size: 2.25rem;
+        font-weight: bold;
+        line-height: 2.25rem;
+        text-transform: uppercase;
+    }
+    #banner-buscar h1 span:last-of-type {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        text-transform: none;
+    }
     #banner-buscar #form {
         margin-top: 45px;
     }
-    #banner-buscar h1 {
-        font-size: 3.25rem;
-        line-height: 3.25rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+    #banner-info {
+        background-image: url(images/home/banner-info.png);
     }
-    #banner-buscar h1 span:last-of-type {
-        font-size: 2.25rem;
-        line-height: 2.25rem;
-        text-transform: none;
+    #banner-info img {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+    #banner-info h2 {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: {{ config('dondepauto.colores.lightblue') }};
     }
     @media(max-width:576px) {
-        [id^=banner-] .full-width {
-            width: calc(100vw - 30px);
-            padding: 0 15px;
-        }
         #banner-buscar {
-            height: calc(100vh - 45px);
             background-position-x: 100%;
-        }
-        #banner-buscar h1 {
-            font-size: 2.25rem;
-            line-height: 2.25rem;
-        }
-        #banner-buscar h1 span:last-of-type {
-            font-size: 1.5rem;
-            line-height: 1.5rem;
         }
     }
     @media(min-width:576px) {
+        [id^=banner-] {
+            height: 100vh;
+        }
+        [id^=banner-] .full-width {
+            width: calc(100vw - 120px);
+            padding: 0 60px;
+        }
+        #banner-buscar h1 {
+            font-size: 3.25rem;
+            line-height: 3.25rem;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+        }
+        #banner-buscar h1 span:last-of-type {
+            font-size: 2.25rem;
+            line-height: 2.25rem;
+        }
         #banner-buscar #form {
             width: 75%;
             margin: 45px 12.5% 0;
+        }
+        #banner-info h2 {
+            margin-bottom: 30px;
+            font-size: 2.75rem;
+        }
+        #banner-info p {
+            font-size: 1.5rem;
         }
     }
 </style>
