@@ -11,7 +11,7 @@
     @include('dondepauto::website.partials.head')
     @yield('css')
 </head>
-<body class="{{ request()->route()->getName() }}">
+<body class="{{ request()->route() ? request()->route()->getName(): '' }}">
     <div class="main" role="document">
         @include('dondepauto::website.partials.header')
 
