@@ -3,7 +3,7 @@
 @section('content')
     <div class="row text-center full-viewport vertical-center" id="banner-buscar">
         <div class="full-width vertical-center-content">
-            <h1>
+            <h1 class="heading">
                 <span>Encuentra los mejores</span>
                 <span><br>espacios de pauta para tu marca o producto</span>
             </h1>
@@ -28,6 +28,18 @@
             <p>Contamos con más de 800 espacios de pauta en todo Colombia para que puedas dar a conocer tu empresa y aumentar la confianza de los clientes que ya te conocen.</p>
         </div>
     </div>
+    <div class="row text-center full-viewport vertical-center" id="banner-registrar">
+        <div class="full-width vertical-center-content">
+            <div class="heading">
+                <span>Haz crecer tu negocio</span>
+                <span><br>pautando en los mejores espacios publicitarios</span>
+            </div>
+            <a href="/registro" type="button" class="btn btn-lg btn-orange" id="btn-registrar">
+                <span>¡Registrarme ya!</span> <i class="fa fa-fw fa-chevron-right"></i>
+            </a><br>
+            <a href="#" id="btn-medios">¿Quieres ofertar tus espacios en DondePauto?</a>
+        </div>
+    </div>
 @endsection
 
 @section('css')
@@ -43,26 +55,34 @@
         width: calc(100vw - 30px);
         padding: 0 15px;
     }
-    #banner-buscar {
-        color: white;
-        background-image: url(images/home/banner-buscar.png);
-    }
-    #banner-buscar h1 {
+    .heading {
         font-size: 2.25rem;
         font-weight: bold;
         line-height: 2.25rem;
         text-transform: uppercase;
+        text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
     }
-    #banner-buscar h1 span:last-of-type {
+    .heading span:last-of-type {
         font-size: 1.5rem;
         line-height: 1.5rem;
         text-transform: none;
     }
-    #banner-buscar #form {
-        margin-top: 45px;
+    #banner-buscar,
+    #banner-registrar {
+        color: white;
+    }
+    #banner-buscar {
+        background-image: url(images/home/banner-buscar.png);
     }
     #banner-info {
         background-image: url(images/home/banner-info.png);
+    }
+    #banner-registrar {
+        height: 75vh;
+        background-image: url(images/home/banner-registrar.png);
+    }
+    #banner-buscar #form {
+        margin-top: 45px;
     }
     #banner-info img {
         max-width: 100%;
@@ -73,9 +93,28 @@
         font-weight: bold;
         color: {{ config('dondepauto.colores.lightblue') }};
     }
+    #banner-registrar .heading {
+        text-transform: none;
+    }
+    #banner-registrar #btn-registrar {
+        margin: 50px auto;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+        -webkit-appearance: none;
+    }
+    #banner-registrar #btn-medios {
+        padding: 2.5px;
+        color: white;
+        text-decoration: underline;
+        display: inline-block;
+    }
     @media(max-width:576px) {
         #banner-buscar {
             background-position-x: 100%;
+        }
+        #banner-registrar .heading span:last-of-type {
+            font-size: 1.25rem;
         }
     }
     @media(min-width:576px) {
@@ -86,12 +125,11 @@
             width: calc(100vw - 120px);
             padding: 0 60px;
         }
-        #banner-buscar h1 {
+        .heading {
             font-size: 3.25rem;
             line-height: 3.25rem;
-            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
         }
-        #banner-buscar h1 span:last-of-type {
+        .heading span:last-of-type {
             font-size: 2.25rem;
             line-height: 2.25rem;
         }
