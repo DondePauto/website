@@ -3,14 +3,21 @@
 export default {
     init() {
         /**
-         * Evento 'click' del botón 'Buscar'.
+         * Respuesta al evento 'click' del botón de búsqueda.
+         * Respuesta al evento 'keyup' del campo de texto.
          */
         $(function() {
-            $('#banner-buscar #btn-buscar').click(function() {
+            function REDIRECT() {
                 var value = $('#banner-buscar #palabra').val();
                 if( !value )
                     return;
                 window.location.href = '/buscar?palabra=' + value;
+            }
+
+            $('#banner-buscar #btn-buscar').click(REDIRECT);
+            $('#banner-buscar input[type=text]').keyup(function(event) {
+                if( event.keyCode==13 )
+                    REDIRECT();
             });
         });
     },

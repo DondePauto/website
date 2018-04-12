@@ -23,6 +23,17 @@
     </div>
 @endsection
 
+@section('javascript')
+<script type="text/javascript">
+    /* global $ */
+    document.addEventListener('DOMContentLoaded', function() {
+        $(function() {
+            setTimeout(function() { $(window).resize(); }, 0);
+        });
+    });
+</script>
+@endsection
+
 @section('css')
 <style type="text/css">
     [id^=banner-],

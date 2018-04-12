@@ -57,6 +57,16 @@ export default {
                 }
             });
         });
+
+        /**
+         * Establece las mágenes de Espacios cuadradas.
+         */
+        $(function() {
+            $(window).resize(function() {
+                $('.espacio .card-img-top').css('minHeight', $('.espacio .card-img-top').width());
+                $('.espacio .card-img-top').css('maxHeight', $('.espacio .card-img-top').width());
+            }).resize();
+        });
     },
     finalize() {
         setTimeout(function() { $(window).resize(); }, 0);

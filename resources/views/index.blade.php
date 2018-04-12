@@ -68,20 +68,6 @@
     </div>
 @endsection
 
-@section('javascript')
-<script type="text/javascript">
-    /* global $ */
-    document.addEventListener('DOMContentLoaded', function(event) {
-        $(function() {
-            $(window).resize(function() {
-                $('.espacio .card-img-top').css('minHeight', $('.espacio .card-img-top').width());
-                $('.espacio .card-img-top').css('maxHeight', $('.espacio .card-img-top').width());
-            }).resize();
-        });
-    });
-</script>
-@endsection
-
 @section('css')
 <style type="text/css">
     a[type=button] {
