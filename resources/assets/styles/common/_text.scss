@@ -5,19 +5,23 @@
   font-size: 2.25rem;
   font-weight: bold;
   line-height: 2.25rem;
-  text-transform: uppercase;
-  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
 }
 
 .h2 {
   font-size: 1.75rem;
   font-weight: bold;
+  line-height: 2.25rem;
 }
 
 @include media-breakpoint-up(sm) {
   .h1 {
     font-size: 3.25rem;
     line-height: 3.25rem;
+  }
+
+  .h2 {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
   }
 }
 

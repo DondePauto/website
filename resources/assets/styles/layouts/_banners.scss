@@ -1,0 +1,29 @@
+/**
+ * Estilos de banners
+ */
+.banner {
+  @extend .full-viewport;
+  @extend .vertical-center;
+
+  height: calc(100vh - 45px);
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .full-width {
+    width: calc(100vw - 30px);
+    padding: 0 15px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .banner {
+    height: 100vh;
+
+    .full-width {
+      width: calc(100vw - 120px);
+      padding: 0 60px;
+    }
+  }
+}

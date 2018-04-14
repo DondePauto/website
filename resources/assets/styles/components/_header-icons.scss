@@ -1,0 +1,16 @@
+/**
+ * Estilos de iconos de cabecera
+ */
+img.header-icon {
+  max-width: 75%;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+
+@include media-breakpoint-up(sm) {
+  img.header-icon {
+    max-width: 350px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
