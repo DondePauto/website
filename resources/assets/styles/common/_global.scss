@@ -1,7 +1,8 @@
 /**
- * <html> y <body> ocupan toda la pantalla sin salirse
- * Todos los elementos tienen Montserrat como fuente y el cursor por defecto
+ * Estilos generales
  */
+
+// <html> y <body> ocupan toda la pantalla sin salirse
 html,
 body {
   width: 100vw;
@@ -16,29 +17,31 @@ body {
   overflow: hidden;
 }
 
+// Todos los elementos tienen Montserrat como fuente y el cursor por defecto
 * {
+  font-family: Montserrat, sans-serif;
   cursor: default;
 }
 
-/**
- * Los elementos <a> tienen el puntero como cursor
- */
+// Los elementos <a> tienen el puntero como cursor
 a,
 a * {
   cursor: pointer;
 }
 
-/**
- * Los elementos <input> tienen el puntero como texto
- */
+// Los elementos <input> tienen el puntero como texto
 input[type=text],
 input[type=password] {
   cursor: text;
 }
 
-/**
- * Clases para dimensionar elementos en ancho y/o alto completo
- */
+// Eliminar el sombreado de los botones
+a[type=button],
+button[type=button] {
+  -webkit-appearance: none;
+}
+
+//Clases para dimensionar elementos en ancho y/o alto completo
 .full-width {
   width: 100vw;
 }
@@ -52,9 +55,7 @@ input[type=password] {
   @extend .full-height;
 }
 
-/**
- * Clases para centrar contenido verticalmente
- */
+// Clases para centrar contenido verticalmente
 div.vertical-center {
   position: relative;
 
