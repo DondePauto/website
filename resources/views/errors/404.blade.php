@@ -64,7 +64,7 @@
         color: white;
     }
     #banner-buscar #not-found {
-        background-image: url(images/home/banner-buscar.png);
+        background-image: url(/images/home/banner-buscar.png);
         -webkit-filter: blur(5px) grayscale(1);
         filter: blur(5px) grayscale(1);
     }
