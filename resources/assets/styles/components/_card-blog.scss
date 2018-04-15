@@ -1,0 +1,54 @@
+/**
+ * Estilos de listado de entradas de blog
+ */
+.card-blog {
+  margin-bottom: 15px;
+  text-align: left;
+  border: none;
+  background: transparent;
+
+  .card-img-top {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-body {
+    padding: 15px 15px 0;
+    position: relative;
+  }
+
+  .fecha {
+    font-size: 12px;
+    color: $gray;
+  }
+
+  .card-title {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .btn-leer {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .card-body {
+      padding: 0;
+      left: -15px;
+    }
+
+    .card-title {
+      height: 65px;
+      max-height: 65px;
+      line-height: 1;
+      display: block;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

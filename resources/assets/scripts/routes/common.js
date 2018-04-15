@@ -59,12 +59,15 @@ export default {
         });
 
         /**
-         * Establece las mágenes de Espacios cuadradas.
+         * Establece los tamaños de imágenes.
          */
         $(function() {
             $(window).resize(function() {
                 $('.card-espacio .card-img-top').css('minHeight', $('.card-espacio .card-img-top').width());
                 $('.card-espacio .card-img-top').css('maxHeight', $('.card-espacio .card-img-top').width());
+
+                $('.card-blog .card-img-top').css('minHeight', $('.card-blog .card-img-top').width()*9/16);
+                $('.card-blog .card-img-top').css('maxHeight', $('.card-blog .card-img-top').width()*9/16);
             }).resize();
         });
     },

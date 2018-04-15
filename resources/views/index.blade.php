@@ -8,6 +8,8 @@
     @include('dondepauto::website.partials.home.banner-registrar')
 
     @include('dondepauto::website.partials.home.espacios-destacados')
+
+    @include('dondepauto::website.partials.home.banner-blog')
 @endsection
 
 @section('css')
