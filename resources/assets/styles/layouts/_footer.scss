@@ -23,12 +23,7 @@ footer {
   a:focus,
   a:active {
     color: white;
-  }
-
-  @include media-breakpoint-down(xs) {
-    #page-links {
-      padding: 0 15px;
-    }
+    text-decoration: none;
   }
 
   #page-links .table {
@@ -58,6 +53,19 @@ footer {
   }
 
   .row.copyright {
+    font-size: 14px;
     background: $lightblue;
+  }
+
+  @include media-breakpoint-down(xs) {
+    #page-links {
+      padding: 0 15px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .row.copyright {
+      font-size: 16px;
+    }
   }
 }
