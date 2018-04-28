@@ -1,6 +1,12 @@
 <div class="row" id="filtros-seleccionados">
     <div class="col-12">
         <b>Filtros seleccionados:</b><br>
+        @if( request()->has('palabra') )
+            <span class="badge badge-pill badge-danger badge-filtro" data-type="palabra" data-target="{{ request()->input('palabra') }}">
+                <b>Palabra: </b><span>{{ request()->input('palabra') }}</span>
+                <i class="fa fa-fw fa-times"></i>
+            </span>
+        @endif
         @foreach( DondePauto\Models\Extras\Termino::categorias(true) as $categoria )
             <span class="badge badge-pill badge-danger badge-filtro" data-type="categoria" data-target="{{ $categoria->id }}">
                 <b>Categoría: </b><span>{{ $categoria->nombre }}</span>

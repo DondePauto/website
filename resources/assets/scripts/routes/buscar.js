@@ -11,8 +11,9 @@ export default {
                 var href = [];
 
                 // Obtener palabra de búsqueda
-                if( $('#banner-buscar #palabra').val() )
-                    href.push('palabra=' + $('#banner-buscar #palabra').val());
+                var palabra = $('#filtros-seleccionados .badge-filtro[data-type=palabra]');
+                if( palabra.val() )
+                    href.push('palabra=' + palabra.val());
 
                 // Obtener categorías
                 var categorias = $('#filtros-seleccionados .badge-filtro[data-type=categoria]').map(function() {
@@ -86,7 +87,10 @@ export default {
              * Respuesta al evento 'click' de los filtros seleccionados.
              */
             $('#filtros-seleccionados i.fa-times').click(function(event) {
-                $(event.target).parents('.badge-filtro').remove(); REDIRECT();
+                var target = $(event.target).parents('.badge-filtro');
+                if( target.attr('data-type')=='palabra' )
+                    $('#banner-buscar #palabra').val('');
+                target.remove(); REDIRECT();
             });
         });
     },
