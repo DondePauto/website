@@ -1,9 +1,8 @@
-<div class="row text-center" id="espacios-destacados">
+<div class="row text-center" id="espacios-filtrados">
     <div class="full-width">
-        <img src="images/home/icon-destacados.png" class="header-icon">
-        <h2 class="h2">Los espacios más destacados</h2>
         <div class="row">
-            @foreach( DondePauto\Models\Espacio::destacados() as $espacio )
+            <?php $espacios = DondePauto\Models\Espacio::filtrados(); ?>
+            @foreach( $espacios as $espacio )
                 <div class="col-6 col-sm-3">
                     <div class="card card-espacio">
                         <div class="card-img-top" style="background-image:url(//files.dondepauto.co/{{ $espacio->miniatura }});"></div>
@@ -18,40 +17,31 @@
                     </div>
                 </div>
             @endforeach
+            {{ $espacios->appends(request()->input())->links('dondepauto::website.partials.buscar.paginacion') }}
         </div>
-        <a href="/buscar" type="button" class="btn btn-lg btn-danger" id="btn-buscar-espacios">
-            <span>Conoce nuestros espacios</span> <i class="fa fa-fw fa-chevron-right"></i>
-        </a>
     </div>
 
     <style type="text/css">
-        #espacios-destacados #btn-buscar-espacios {
-            margin: 20px auto;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-        }
-        #espacios-destacados .full-width {
+        #espacios-filtrados .full-width {
             padding: 15px;
         }
-        #espacios-destacados .h2 {
-            margin-bottom: 15px;
-        }
-        #espacios-destacados .row {
+        #espacios-filtrados .row {
             margin-right: -7.5px;
             margin-left: -7.5px;
         }
-        #espacios-destacados .row>div {
+        #espacios-filtrados .row>div {
             padding: 0 7.5px;
         }
         @media(min-width: 576px) {
-            #espacios-destacados #btn-buscar-espacios {
-                margin: 50px auto;
-                font-size: 25px;
-            }
-            #espacios-destacados .row {
+            #espacios-filtrados .row {
                 margin-right: calc(5% - 7.5px);
                 margin-left: calc(5% - 7.5px);
+            }
+        }
+        @media(min-width: 768px) {
+            #espacios-filtrados .row {
+                margin-right: calc(10% - 7.5px);
+                margin-left: calc(10% - 7.5px);
             }
         }
     </style>

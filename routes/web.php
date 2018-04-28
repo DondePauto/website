@@ -11,8 +11,12 @@
 */
 
 Route::get('', function() {
-    return view('dondepauto::index');
+    return view('dondepauto::pages.index');
 })->name('home');
+
+Route::get('buscar', function() {
+    return view('dondepauto::pages.buscar');
+})->name('buscar');
 
 // Hojas de estilo y scripts globales
 Route::get('style.css', function() {
