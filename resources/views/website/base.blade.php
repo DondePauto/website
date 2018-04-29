@@ -15,7 +15,7 @@
     <div class="main" role="document">
         @include('dondepauto::website.partials.header')
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="content">
             @yield('content')
         </div>
 

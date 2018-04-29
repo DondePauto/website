@@ -1,6 +1,11 @@
 /**
  * Estilos de la barra de navegación
  */
+.bg-opaque .brand-light,
+.bg-transparent .brand-dark {
+  display: none !important;
+}
+
 .navbar {
   padding: 0;
   font-size: 14px;
@@ -71,9 +76,24 @@
 }
 
 @include media-breakpoint-up(sm) {
+  .navbar.bg-opaque {
+    background: white !important;
+
+    #link-buscar a {
+      color: $lightblue !important;
+    }
+
+    #link-buscar a:hover {
+      color: $orange !important;
+    }
+  }
+
+  .navbar.bg-transparent {
+    background: transparent !important;
+  }
+
   .navbar {
     padding: 25px;
-    background: transparent !important;
     position: absolute;
 
     .navbar-brand {

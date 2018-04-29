@@ -1,7 +1,8 @@
-<header class="navbar navbar-expand-sm fixed-top">
+<header class="navbar navbar-expand-sm fixed-top @yield('navbar-bg', 'bg-transparent')">
     <a href="{{ config('app.url') }}" class="navbar-brand">
         <img src="//files.dondepauto.co/brand/logo-light_-h35.png" class="d-inline d-sm-none">
-        <img src="//files.dondepauto.co/brand/logo-light_-h50.png" class="d-none d-sm-inline">
+        <img src="//files.dondepauto.co/brand/logo-light_-h50.png" class="d-none d-sm-inline brand-light">
+        <img src="//files.dondepauto.co/brand/logo-dark_-h50.png" class="d-none d-sm-inline brand-dark">
     </a>
     <button type="button" class="navbar-toggler" data-toggle="collapse"
         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +16,7 @@
                     <img src="//files.dondepauto.co/brand/logo-light_-h35-cwhite.png">
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="link-buscar">
                 <a class="nav-link" href="{{ config('app.url') }}/buscar">
                     <span class="d-block d-sm-none">Espacios de pauta</span>
                     <span class="d-none d-sm-block">Conoce nuestros espacios</span>
