@@ -95,7 +95,7 @@
       }
 
       .nav-link:not(.btn):hover {
-        color: $orange;
+        color: $orange !important;
       }
 
       .nav-link.btn {
