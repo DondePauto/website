@@ -18,6 +18,10 @@ Route::get('buscar', function() {
     return view('dondepauto::pages.buscar');
 })->name('buscar');
 
+Route::get('espacios/{espacio}', function(\DondePauto\Models\Espacio $espacio) {
+    return view('dondepauto::pages.espacio', compact('espacio'));
+})->name('espacio');
+
 // Hojas de estilo y scripts globales
 Route::get('style.css', function() {
     $assets = realpath(__DIR__.'/../dist/assets.json');
