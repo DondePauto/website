@@ -64,7 +64,7 @@
         #pagination .page-link {
             padding: 0.25rem 0.5rem;
             font-size: 0.875rem;
-            color: {{ config('dondepauto.colores.gray') }};
+            color: {{ config('dondepauto.colores.dark') }};
             border: 1px solid transparent;
         }
         #pagination .active .page-link {
