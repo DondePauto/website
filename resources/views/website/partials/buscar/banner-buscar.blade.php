@@ -43,7 +43,7 @@
                     </button>
                     <div class="dropdown-menu">
                         @foreach( DondePauto\Models\Extras\Termino::audiencias() as $tipo )
-                            <h6 class="dropdown-header" data-type="{{ $tipo->tipo_slug }}">{{ $tipo->tipo }}</h6>
+                            <span class="dropdown-header" data-type="{{ $tipo->tipo_slug }}">{{ $tipo->tipo }}</span>
                             @foreach( $tipo->audiencias as $audiencia )
                                 <a class="dropdown-item dropdown-audiencia" data-type="{{ $tipo->tipo_slug }}" data-target="{{ $audiencia->id }}">
                                     {{ $audiencia->nombre }}
