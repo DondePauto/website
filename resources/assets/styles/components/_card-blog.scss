@@ -2,9 +2,11 @@
  * Estilos de listado de entradas de blog
  */
 .card-blog {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  padding-top: 10px;
   text-align: left;
   border: none;
+  border-top: 5px solid $lightblue;
   background: transparent;
 
   .card-img-top {

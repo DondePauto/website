@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="none">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    @yield('seo')
 
+    @include('dondepauto::website.partials.seo')
     @include('dondepauto::favicons')
     @include('dondepauto::website.partials.head')
     @yield('css')
