@@ -11,9 +11,10 @@ export default {
                 var href = [];
 
                 // Obtener palabra de búsqueda
-                var palabra = $('#filtros-seleccionados .badge-filtro[data-type=palabra]');
-                if( palabra.val() )
-                    href.push('palabra=' + palabra.val());
+                if( $('#banner-buscar #palabra').val() )
+                    href.push('palabra=' + $('#banner-buscar #palabra').val());
+                else if( $('#filtros-seleccionados .badge-filtro[data-type=palabra]').length )
+                    href.push('palabra=' + $('#filtros-seleccionados .badge-filtro[data-type=palabra]').attr('data-target'));
 
                 // Obtener categorías
                 var categorias = $('#filtros-seleccionados .badge-filtro[data-type=categoria]').map(function() {
