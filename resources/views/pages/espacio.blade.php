@@ -23,6 +23,7 @@
             @include('dondepauto::website.partials.espacio.etiquetas')
 
             @include('dondepauto::website.partials.espacio.sidebar')
+            @include('dondepauto::website.partials.espacio.footer')
         </div>
     </div>
 
