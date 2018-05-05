@@ -16,15 +16,10 @@
             </div>
 
             @include('dondepauto::website.partials.espacio.imagenes')
-
             @include('dondepauto::website.partials.espacio.informacion-basica')
-
             @include('dondepauto::website.partials.espacio.audiencias')
-
             @include('dondepauto::website.partials.espacio.restricciones')
-
             @include('dondepauto::website.partials.espacio.descripcion')
-
             @include('dondepauto::website.partials.espacio.etiquetas')
 
             @include('dondepauto::website.partials.espacio.sidebar')

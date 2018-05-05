@@ -40,13 +40,15 @@ export default {
             });
 
             /**
-             * Evento 'scroll' del explorador.
+             * Evento 'ps-scroll-y' del contenedor principal.
              */
             $('.espacio-content .sidebar').css('top', $($('.espacio-content>.container-fluid>.row').get(0)).height()+'px');
             $('.main').on('ps-scroll-y', function() {
                 var container = $('.espacio-content>.container-fluid');
                 var title     = $('.espacio-content>.container-fluid>.row').get(0);
                 var content   = $('.espacio-content>.container-fluid>.row').get(1);
+
+                // Barra lateral
                 if( $(content).offset().top<0 ) {
                     var offset = $(title).height()-$(content).offset().top;
                     if( (offset+$('.sidebar').height()-15)<$(container).height() )

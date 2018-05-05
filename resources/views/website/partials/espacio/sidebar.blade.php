@@ -1,14 +1,14 @@
-<div class="sidebar">
+<div class="sidebar d-none d-sm-block">
     @guest
-        <div class="sidebar-panel" id="precio">
+        <div class="sidebar-panel" id="sidebar-precio">
             <img src="/images/espacio/icon-precio.png"></img>
-            <a id="link-login" data-toggle="modal" data-target="#modal-login">Inicia sesión para ver el precio</a>
+            <a id="sidebar-link-login" data-toggle="modal" data-target="#modal-login">Inicia sesión para ver el precio</a>
         </div>
     @endguest
-    <div class="sidebar-panel" id="cotizar">
+    <div class="sidebar-panel" id="sidebar-cotizar">
         <div class="text-center">
             <b>¿Te interesa este espacio de pauta?</b>
-            <button type="button" class="btn btn-orange" id="btn-cotizar" data-toggle="modal" data-target="#modal-cotizar">
+            <button type="button" class="btn btn-orange" id="sidebar-btn-cotizar" data-toggle="modal" data-target="#modal-cotizar">
                 <b>Cotizar</b>
             </button>
         </div>
@@ -41,41 +41,37 @@
     </div>
 
     <style type="text/css">
+        .sidebar {
+            width: calc(33.3333% + 15px);
+            position: absolute;
+            right: 0;
+        }
         .sidebar-panel {
             margin: 15px;
             padding: 15px;
             font-size: 12px;
+            border-radius: 5px;
             background-color: {{ config('dondepauto.colores.lightgray') }};
         }
-        #precio #link-login {
+        #sidebar-precio #sidebar-link-login {
             text-decoration: underline;
             color: {{ config('dondepauto.colores.lightblue') }};
         }
-        #cotizar #btn-cotizar {
+        #sidebar-cotizar #sidebar-btn-cotizar {
             width: 75%;
             margin: 5px 0 15px;
             text-transform: uppercase;
             color: white;
         }
-        #cotizar #link-agregar-favorito {
+        #sidebar-cotizar #link-agregar-favorito {
             font-size: 14px;
         }
-        #cotizar #link-favoritos {
+        #sidebar-cotizar #link-favoritos {
             margin: 5px 0;
             color: white;
         }
-        #compartir .btn-share {
+        #sidebar-compartir .btn-share {
             text-decoration: none;
-        }
-        @media(min-width: 576px) {
-            .sidebar {
-                width: calc(33.3333% + 15px);
-                position: absolute;
-                right: 0;
-            }
-            .sidebar-panel {
-                border-radius: 5px;
-            }
         }
     </style>
 </div>
