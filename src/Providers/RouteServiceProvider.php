@@ -36,7 +36,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        Route::middleware('web')
+        Route::middleware('web', \DondePauto\Http\Middleware\CheckRole::class)
             ->namespace($this->namespace)
             ->group(realpath(__DIR__.'/../../routes/web.php'));
     }
