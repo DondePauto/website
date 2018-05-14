@@ -38,7 +38,7 @@
                             <div class="card-title">{{ $relacionado->titulo }}</div>
                             <hr class="card-separator">
                             <div class="categoria">{{ $relacionado->data->categoria==null ? '' : $relacionado->data->categoria->nombre }}</div>
-                            <a href="/espacios/{{ $relacionado->slug }}" type="button" class="btn btn-danger btn-ver-mas">
+                            <a href="{{ route('espacio', ['espacio' => $relacionado->slug]) }}" type="button" class="btn btn-danger btn-ver-mas">
                                 <b>Ver más</b>
                             </a>
                         </div>

@@ -11,7 +11,7 @@
                             <div class="card-title">{{ $espacio->titulo }}</div>
                             <hr class="card-separator">
                             <div class="categoria">{{ $espacio->data->categoria==null ? '' : $espacio->data->categoria->nombre }}</div>
-                            <a href="/espacios/{{ $espacio->slug }}" type="button" class="btn btn-danger btn-ver-mas">
+                            <a href="{{ route('espacio', compact('espacio')) }}" type="button" class="btn btn-danger btn-ver-mas">
                                 <b>Ver más</b>
                             </a>
                         </div>
@@ -19,7 +19,7 @@
                 </div>
             @endforeach
         </div>
-        <a href="/buscar" type="button" class="btn btn-lg btn-danger" id="btn-buscar-espacios">
+        <a href="{{ route('buscar') }}" type="button" class="btn btn-lg btn-danger" id="btn-buscar-espacios">
             <span>Conoce nuestros espacios</span> <i class="fa fa-fw fa-chevron-right"></i>
         </a>
     </div>
