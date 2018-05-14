@@ -22,6 +22,17 @@ Route::get('espacios/{espacio}', function(\DondePauto\Models\Espacio $espacio) {
     return view('dondepauto::pages.espacio', compact('espacio'));
 })->name('espacio');
 
+Route::get('documento/{documento}', function( $documento ) {
+    $url = '/documento/'.$documento;
+    $documento = collect(json_decode(setting('administracion.documentos')))
+        ->first(function($documento) use ($url) {
+            return $documento->tipo=='web' and $documento->url==$url;
+        });
+    if( $documento )
+        return view('dondepauto::pages.documento', compact('documento'));
+    return redirect()->away(config('app.url'));
+})->name('documento');
+
 // Hojas de estilo y scripts globales
 Route::get('style.css', function() {
     $assets = realpath(__DIR__.'/../dist/assets.json');
