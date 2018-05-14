@@ -18,7 +18,7 @@ Route::get('buscar', function() {
     return view('dondepauto::pages.buscar');
 })->name('buscar');
 
-Route::get('espacios/{espacio}', function(\DondePauto\Models\Espacio $espacio) {
+Route::get('espacios/{espacio}', function( \DondePauto\Models\Espacio $espacio ) {
     return view('dondepauto::pages.espacio', compact('espacio'));
 })->name('espacio');
 
@@ -56,7 +56,7 @@ Route::get('script.js', function() {
 });
 
 // Imágenes
-Route::get('images/{path}', function($path) {
+Route::get('images/{path}', function( $path ) {
     $path = realpath(__DIR__.'/../resources/assets/images/'.$path);
     if( !$path )
         return redirect()->away(env('APP_URL'));

@@ -1,13 +1,13 @@
 <footer class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-3 col-xl-2 text-center">
-            <img src="//files.dondepauto.co/brand/logo-light_-h35-cwhite.png" class="d-inline d-sm-none">
-            <img src="//files.dondepauto.co/brand/logo-light_-h50-cwhite.png" class="d-none d-sm-inline">
+            <img src="{{ route('files.brand', ['path' => 'logo-light_-h35-cwhite']) }}" class="d-inline d-sm-none">
+            <img src="{{ route('files.brand', ['path' => 'logo-light_-h50-cwhite']) }}" class="d-none d-sm-inline">
         </div>
         <div class="col-12 col-sm-6 col-xl-4" id="page-links">
             <table class="table">
                 <tr>
-                    <td><a href="/buscar" target="_self">Espacios de pauta</a></td>
+                    <td><a href="{{ route('buscar') }}" target="_self">Espacios de pauta</a></td>
                     <td><a href="/blog" target="_self">Blog</a></td>
                 </tr>
                 <tr>
@@ -15,12 +15,12 @@
                     <td><a href="/trabajo" target="_self">Ofertas laborales</a></td>
                 </tr>
                 <tr>
-                    <td><a href="/buscar" target="_self">Medios publicitarios</a></td>
-                    <td><a href="/terminos-condiciones" target="_self">Términos y Condiciones</a></td>
+                    <td><a href="{{ route('buscar') }}" target="_self">Medios publicitarios</a></td>
+                    <td><a href="{{ route('documento', ['documento' => 'terminos-condiciones']) }}" target="_self">Términos y Condiciones</a></td>
                 </tr>
                 <tr>
                     <td><a href="/registro" target="_self">Registro</a></td>
-                    <td><a href="/politica-privacidad" target="_self">Política de privacidad</a></td>
+                    <td><a href="{{ route('documento', ['documento' => 'politica-privacidad']) }}" target="_self">Política de privacidad</a></td>
                 </tr>
                 <tr>
                     <td><a href="/contacto" target="_self">Contacto</a></td>
@@ -31,8 +31,7 @@
         <div class="col-12 col-sm-3 col-xl-2 text-center">
             <hr class="d-block d-sm-none">
             <b class="text-orange" id="phones">
-                <?php $telefonos = json_decode(setting('contacto.telefonos')); ?>
-                @foreach( $telefonos as $telefono )
+                @foreach( json_decode(setting('contacto.telefonos')) as $telefono )
                     {{ $telefono->valor }}<br>
                 @endforeach
             </b>
