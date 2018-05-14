@@ -7,7 +7,7 @@
         <a href="/registro" type="button" class="btn btn-lg btn-orange" id="btn-registrar">
             <span>¡Registrarme ya!</span> <i class="fa fa-fw fa-chevron-right"></i>
         </a><br>
-        <a href="#" id="btn-medios">¿Quieres ofertar tus espacios en DondePauto?</a>
+        <a id="btn-medios">¿Quieres ofertar tus espacios en DondePauto?</a>
     </div>
 
     <style type="text/css">

@@ -12,7 +12,7 @@
             @foreach( $elements as $element )
                 @if( is_string($element) )
                     <li class="page-item disabled">
-                        <a href="#" class="page-link">{{ $element }}</a>
+                        <a class="page-link">{{ $element }}</a>
                     </li>
                 @endif
                 
@@ -20,7 +20,7 @@
                     @foreach( $element as $page=>$url )
                         @if( $page==$paginator->currentPage() )
                             <li class="page-item active">
-                                <a href="#" class="page-link">{{ $page }}</a>
+                                <a class="page-link">{{ $page }}</a>
                             </li>
                         @else
                             <li class="page-item">
