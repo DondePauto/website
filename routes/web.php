@@ -11,7 +11,7 @@
 */
 
 Route::get('', function() {
-    return view('dondepauto::pages.index');
+    return view('dondepauto::pages.home');
 })->name('home');
 
 Route::get('buscar', function() {
