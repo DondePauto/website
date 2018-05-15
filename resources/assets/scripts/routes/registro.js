@@ -23,13 +23,18 @@ export default {
                     'celular': $('input[name=celular]').val(),
                     'empresa': $('input[name=empresa]').val(),
                     'role': $('input[name=role]:checked').val(),
-                    'consent': $('input[name=consent]:checked').val(),
+                    'consent': $('input[name=consent]:checked').length ? 'yes' : 'no',
+                    'consent_timestamp': $('input[name=consent_timestamp]').val(),
                 }, function() {
                     // TODO
                 }).fail(function(error) {
                     console.clear();
                     var response = error.responseJSON;
-                    $('.main').animate({'scrollTop': 0}, 500, function() {
+                    var field = Object.keys(response.errors)[0];
+
+                    var scroll = $('.main').scrollTop(); $('.main').scrollTop(0);
+                    var offset = $('input[name=' + field + ']').offset().top-50;
+                    $('.main').scrollTop(scroll).animate({'scrollTop': offset}, 500, function() {
                         var fields = Object.keys(response.errors)
                             .map(function(field) { return 'input[name=' + field + ']'; })
                             .join(', ');
@@ -39,6 +44,16 @@ export default {
                         }).addClass('shake is-invalid');
                     });
                 });
+            });
+
+            /**
+             * Evento 'change' de la casilla de consentimiento.
+             */
+            $('input[name=consent]').change(function() {
+                if( $('input[name=consent]:checked').length )
+                    $('input[name=consent_timestamp]').val(Date.now());
+                else
+                    $('input[name=consent_timestamp]').val('');
             });
         });
     },

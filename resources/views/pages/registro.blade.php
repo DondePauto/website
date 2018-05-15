@@ -53,6 +53,7 @@
                 </div>
                 <div class="col-12 text-left" id="consent">
                     <input type="checkbox" name="consent" value="yes">
+                    <input type="hidden" name="consent_timestamp" value="">
                     <span>
                         Acepto los <a href="{{ route('documento', ['documento' => 'terminos-condiciones']) }}">términos y condiciones de uso</a>
                         y la <a href="{{ route('documento', ['documento' => 'politica-privacidad']) }}">política de tratamiento de datos</a> de DóndePauto.
