@@ -11,14 +11,17 @@
                 <div class="col-12 col-sm-6 form-group animated">
                     <label for="nombre">Nombre <b class="text-danger">*</b></label>
                     <input type="text" name="nombre" class="form-control">
+                    <div class="feedback text-danger" id="feedback-nombre"></div>
                 </div>
                 <div class="col-12 col-sm-6 form-group animated">
                     <label for="apellido">Apellido <b class="text-danger">*</b></label>
                     <input type="text" name="apellido" class="form-control">
+                    <div class="feedback text-danger" id="feedback-apellido"></div>
                 </div>
                 <div class="col-12 col-sm-6 form-group animated">
                     <label for="email">Correo electrónico <b class="text-danger">*</b></label>
                     <input type="email" name="email" class="form-control">
+                    <div class="feedback text-danger" id="feedback-email"></div>
                 </div>
                 <div class="col-12 col-sm-6 form-group">
                     <label for="celular">Celular</label>
@@ -30,6 +33,7 @@
                 </div>
                 <div class="col-12 text-center">
                     <b style="color: {{ config('dondepauto.colores.lightblue') }};">Selecciona cómo deseas registrarte en DóndePauto:</b>
+                    <div class="feedback text-danger" id="feedback-role"></div>
                 </div>
                 <div class="col-6 col-sm-5 text-center form-group col-radio">
                     <label class="radio animated">

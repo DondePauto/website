@@ -16,6 +16,7 @@ export default {
              * Evento 'click' del botón de registro.
              */
             $('#btn-submit').click(function() {
+                $('.feedback').hide(250);
                 $.post('https://api.dondepauto.co/registro', {
                     'nombre': $('input[name=nombre]').val(),
                     'apellido': $('input[name=apellido]').val(),
@@ -30,17 +31,18 @@ export default {
                 }).fail(function(error) {
                     console.clear();
                     var response = error.responseJSON;
-                    var field = Object.keys(response.errors)[0];
+                    var first    = Object.keys(response.errors)[0];
 
                     var scroll = $('.main').scrollTop(); $('.main').scrollTop(0);
-                    var offset = $('input[name=' + field + ']').offset().top-50;
+                    var offset = $('input[name=' + first + ']').offset().top-50;
                     $('.main').scrollTop(scroll).animate({'scrollTop': offset}, 500, function() {
-                        var fields = Object.keys(response.errors)
-                            .map(function(field) { return 'input[name=' + field + ']'; })
-                            .join(', ');
-                        $(fields).addClass('is-invalid').parent().one(window.ANIMATION_END, function() {
+                        Object.keys(response.errors).forEach(function(field) {
+                            $('#feedback-' + field).html(response.errors[field][0]).show(250);
+                        });
+                        var inputs = Object.keys(response.errors).map(function(field) { return 'input[name=' + field + ']'; }).join(', ');
+                        $(inputs).addClass('is-invalid').parent().one(window.ANIMATION_END, function() {
                             $(this).removeClass('shake is-invalid');
-                            $(fields).removeClass('is-invalid');
+                            $(inputs).removeClass('is-invalid');
                         }).addClass('shake is-invalid');
                     });
                 });
