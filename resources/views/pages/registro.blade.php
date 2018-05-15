@@ -32,7 +32,7 @@
                     <input type="text" name="empresa" class="form-control">
                 </div>
                 <div class="col-12 text-center">
-                    <b style="color: {{ config('dondepauto.colores.lightblue') }};">Selecciona cómo deseas registrarte en DóndePauto:</b>
+                    <b class="text-lightblue">Selecciona cómo deseas registrarte en DóndePauto:</b>
                     <div class="feedback text-danger" id="feedback-role"></div>
                 </div>
                 <div class="col-6 col-sm-5 text-center form-group col-radio">
@@ -56,11 +56,14 @@
                     </label>
                 </div>
                 <div class="col-12 text-left" id="consent">
-                    <input type="checkbox" name="consent" value="yes">
+                    <input type="hidden" name="consent" value="no">
                     <input type="hidden" name="consent_timestamp" value="">
                     <span>
-                        Acepto los <a href="{{ route('documento', ['documento' => 'terminos-condiciones']) }}">términos y condiciones de uso</a>
-                        y la <a href="{{ route('documento', ['documento' => 'politica-privacidad']) }}">política de tratamiento de datos</a> de DóndePauto.
+                        <i class="fa fa-fw fa-lg fa-square-o text-lightgray" id="icon-consent"></i>
+                        <span>
+                            Acepto los <a href="{{ route('documento', ['documento' => 'terminos-condiciones']) }}">términos y condiciones de uso</a>
+                            y la <a href="{{ route('documento', ['documento' => 'politica-privacidad']) }}">política de tratamiento de datos</a> de DóndePauto.
+                        </span>
                     </span>
                 </div>
                 <div class="col-12 text-center">

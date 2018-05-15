@@ -49,13 +49,18 @@ export default {
             });
 
             /**
-             * Evento 'change' de la casilla de consentimiento.
+             * Evento 'click' de la casilla de consentimiento.
              */
-            $('input[name=consent]').change(function() {
-                if( $('input[name=consent]:checked').length )
-                    $('input[name=consent_timestamp]').val(Date.now());
-                else
+            $('#icon-consent').click(function() {
+                if( $('input[name=consent]').val()=='yes' ) {
+                    $('input[name=consent]').val('no');
                     $('input[name=consent_timestamp]').val('');
+                    $(this).removeClass('fa-check-square text-lightblue').addClass('fa-square-o text-lightgray');
+                } else {
+                    $('input[name=consent]').val('yes');
+                    $('input[name=consent_timestamp]').val(Date.now());
+                    $(this).removeClass('fa-square-o text-lightgray').addClass('fa-check-square text-lightblue');
+                }
             });
         });
     },
