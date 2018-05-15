@@ -18,6 +18,10 @@ Route::get('buscar', function() {
     return view('dondepauto::pages.buscar');
 })->name('buscar');
 
+Route::get('registro', function() {
+    return view('dondepauto::pages.registro');
+})->name('registro');
+
 Route::get('espacios/{espacio}', function( \DondePauto\Models\Espacio $espacio ) {
     return view('dondepauto::pages.espacio', compact('espacio'));
 })->name('espacio');

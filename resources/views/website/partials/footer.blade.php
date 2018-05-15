@@ -19,7 +19,7 @@
                     <td><a href="{{ route('documento', ['documento' => 'terminos-condiciones']) }}" target="_self">Términos y Condiciones</a></td>
                 </tr>
                 <tr>
-                    <td><a href="/registro" target="_self">Registro</a></td>
+                    <td><a href="{{ route('registro') }}" target="_self">Registro</a></td>
                     <td><a href="{{ route('documento', ['documento' => 'politica-privacidad']) }}" target="_self">Política de privacidad</a></td>
                 </tr>
                 <tr>

@@ -8,6 +8,7 @@
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
 @import "~bootstrap/scss/bootstrap";
+@import "~animate.css/animate";
 @import "~perfect-scrollbar/css/perfect-scrollbar";
 
 /** Import theme styles */
@@ -25,4 +26,5 @@
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/pages";
+@import "layouts/forms";
 @import "layouts/banners";

@@ -1,0 +1,41 @@
+/**
+ * Estilos de formularios
+ */
+.form {
+  a {
+    color: $lightblue !important;
+    text-decoration: none;
+
+    &:hover {
+      color: $darkblue !important;
+    }
+  }
+
+  label {
+    font-weight: bold;
+
+    span {
+      font-weight: normal;
+    }
+  }
+
+  label.radio {
+    &,
+    & * {
+      color: $gray;
+      cursor: pointer;
+    }
+
+    & > input {
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  textarea {
+    border-radius: 0.25rem;
+  }
+}

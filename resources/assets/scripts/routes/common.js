@@ -4,6 +4,24 @@ import PerfectScrollbar from 'perfect-scrollbar';
 export default {
     init() {
         /**
+         * Obtiene el evento de fin de animacion para el explorador actual.
+         * Este evento es usado por animate.css.
+         */
+        window.ANIMATION_END = (function () {
+            var e = document.createElement('element');
+            var animations = {
+                animation       : 'animationend',
+                OAnimation      : 'oAnimationEnd',
+                MozAnimation    : 'animationend',
+                WebkitAnimation : 'webkitAnimationEnd',
+            };
+            for( var k in animations ) {
+                if( e.style[k]!==undefined )
+                    return animations[k];
+            }
+        })();
+
+        /**
          * Establece la altura mínima del contenedor principal.
          * Inicialización de Perfect Scrollbar.
          */
