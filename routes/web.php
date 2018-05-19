@@ -22,6 +22,10 @@ Route::get('registro', function() {
     return view('dondepauto::pages.registro');
 })->name('registro');
 
+Route::get('login', function() {
+    return redirect()->away(config('app.url'));
+})->name('login');
+
 Route::get('espacios/{espacio}', function( \DondePauto\Models\Espacio $espacio ) {
     return view('dondepauto::pages.espacio', compact('espacio'));
 })->name('espacio');
