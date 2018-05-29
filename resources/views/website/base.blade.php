@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
     @include('dondepauto::website.partials.seo')
-    @include('dondepauto::favicons')
+    @include('dondepauto::partials.favicons')
     @include('dondepauto::website.partials.head')
     @yield('css')
 </head>
-<body class="{{ request()->route() ? request()->route()->getName(): '' }}">
+<body class="{{ request()->route() ? request()->route()->getName() : '' }}">
     <div class="main" role="document">
         @include('dondepauto::website.partials.header')
 
