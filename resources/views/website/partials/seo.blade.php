@@ -21,3 +21,13 @@
 <meta name="twitter:title" content="@yield('title', config('app.name').' - '.setting('website.descripcion_'.RUTA))">
 <meta name="twitter:description" content="@yield('description', setting('website.descripcion_'.RUTA))">
 <meta name="twitter:image" content="@yield('image', route('files.favicons', ['path' => 'android-chrome-192x192.png']))">
+
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-48519849-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-48519849-1');
+</script>

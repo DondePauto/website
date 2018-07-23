@@ -143,7 +143,7 @@
         color: white;
         background-color: {{ config('dondepauto.colores.lightblue') }};
     }
-    .registro-content .form #btn-submit {
+    .registro-content #btn-submit {
         width: 50%;
         margin: 10px auto;
         font-size: 16px;
@@ -168,7 +168,7 @@
         .registro-content .form label.radio>input + div {
             margin: 15px;
         }
-        .registro-content .form #btn-submit {
+        .registro-content #btn-submit {
             margin: 25px auto;
             font-size: 25px;
         }

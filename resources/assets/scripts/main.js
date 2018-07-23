@@ -13,6 +13,7 @@ import common from './routes/common';
 import home from './routes/home';
 import buscar from './routes/buscar';
 import registro from './routes/registro';
+import activar from './routes/activar';
 import espacio from './routes/espacio';
 
 /** Populate Router instance with DOM routes */
@@ -21,6 +22,7 @@ const routes = new Router({
     home,        // Página de inicio
     buscar,      // Página de búsqueda
     registro,    // Página de registro
+    activar,     // Página de activación
     espacio,     // Página de Espacio Publicitario
 });
 

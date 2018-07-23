@@ -22,6 +22,14 @@ Route::get('registro', function() {
     return view('dondepauto::pages.registro');
 })->name('registro');
 
+Route::get('activar', function() {
+    $codigo  = isset(array_keys(request()->query())[0]) ? array_keys(request()->query())[0] : null;
+    $usuario = \DondePauto\Models\Usuario::where('password', 'like', 'code:'.$codigo)->first();
+    $role    = DB::table('roles')->where('id', $usuario->role_id)->first();
+
+    return view('dondepauto::pages.activar-'.$role->name, compact('usuario', 'codigo'));
+})->name('activar');
+
 Route::get('login', function() {
     return redirect()->away(config('app.url'));
 })->name('login');
