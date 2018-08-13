@@ -27,6 +27,7 @@ export default {
                     'consent': $('.form [name=consent]').val(),
                     'consent_timestamp': $('.form [name=consent_timestamp]').val(),
                 }, function() {
+                    alert('Tu registro ha sido exitoso! Hemos enviado un enlace de activación a tu correo para que puedas continuar con el proceso');
                     window.location.href = '/';
                 }).fail(function(error) {
                     console.clear();

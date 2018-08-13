@@ -23,13 +23,15 @@
                     <input type="email" name="email" class="form-control">
                     <div class="feedback text-danger" id="feedback-email"></div>
                 </div>
-                <div class="col-12 col-sm-6 form-group">
-                    <label for="celular">Celular</label>
+                <div class="col-12 col-sm-6 form-group animated">
+                    <label for="celular">Celular  <b class="text-danger">*</b></label>
                     <input type="text" name="celular" class="form-control">
+                    <div class="feedback text-danger" id="feedback-celular"></div>
                 </div>
-                <div class="col-12 form-group">
-                    <label for="empresa">Empresa</label>
+                <div class="col-12 form-group animated">
+                    <label for="empresa">Empresa <b class="text-danger">*</b></label>
                     <input type="text" name="empresa" class="form-control">
+                    <div class="feedback text-danger" id="feedback-empresa"></div>
                 </div>
                 <div class="col-12 text-center">
                     <b class="text-lightblue">Selecciona cómo deseas registrarte en DóndePauto:</b>

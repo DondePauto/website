@@ -36,6 +36,21 @@ export default {
         });
 
         /**
+         * Habilitación de Perfect Scrollbar cuando se abre o cierra un modal.
+         */
+        var ps_modal; $(function() {
+            $('.modal').on('show.bs.modal', function() {
+                if( $('.modal:visible').length )
+                    $('.modal:visible').modal('hide');
+                if( ps ) { ps.destroy(); ps = null; }
+                ps_modal = new PerfectScrollbar('.modal-body', {suppressScrollX: true}); ps_modal.update();
+            }).on('hidden.bs.modal', function() {
+                if( ps_modal ) { ps_modal.destroy(); ps_modal = null; }
+                ps = new PerfectScrollbar('.main', {suppressScrollX: true}); ps.update();
+            });
+        });
+
+        /**
          * Habilita el colapso de la barra de navigación desde el lado izquierdo.
          */
         $(function() {

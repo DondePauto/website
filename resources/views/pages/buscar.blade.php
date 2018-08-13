@@ -10,6 +10,17 @@
     @include('dondepauto::website.partials.buscar.espacios-filtrados')
 
     @include('dondepauto::website.partials.banner-contactanos')
+
+    {{-- BOTON DE ASESORIA --}}
+    <button type="button" class="btn btn-success" id="btn-soporte" data-toggle="modal" data-target="#modal-asesoria">
+        <img src="/images/icon-soporte.png">
+    </button>
+
+    {{-- MODALS --}}
+    @include('dondepauto::website.modals.asesoria')
+    @if( !auth()->check() or auth()->user()->role->name!='anunciante' )
+        @include('dondepauto::website.modals.login')
+    @endif
 @endsection
 
 @section('css')

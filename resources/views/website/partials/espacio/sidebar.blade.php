@@ -1,10 +1,19 @@
 <div class="sidebar d-none d-sm-block">
-    @guest
-        <div class="sidebar-panel" id="sidebar-precio">
-            <img src="/images/espacio/icon-precio.png"></img>
+    <div class="sidebar-panel" id="sidebar-precio">
+        <img src="/images/espacio/icon-precio.png">
+        @if( auth()->check() )
+            <span style="font-size: 24px; font-weight: bold; position: relative; top: 6px;">
+                <?php $precio = isset($espacio->data->precio->valor) ? $espacio->data->precio->valor : 0; ?>
+                <?php $margen = isset($espacio->data->precio->margen) ? $espacio->data->precio->margen : 15; ?>
+                {{ '$ '.number_format((100/(100 - $margen))*$precio) }}
+            </span>
+            <span style="position: relative; top: 6px;">
+                / {{ isset($espacio->data->periodo) ? strtolower($espacio->data->periodo) : '' }}
+            </span>
+        @else
             <a id="sidebar-link-login" data-toggle="modal" data-target="#modal-login">Inicia sesión para ver el precio</a>
-        </div>
-    @endguest
+        @endif
+    </div>
     <div class="sidebar-panel" id="sidebar-cotizar">
         <div class="text-center">
             <b>¿Te interesa este espacio de pauta?</b>
@@ -12,18 +21,25 @@
                 <b>Cotizar</b>
             </button>
         </div>
-        @guest
+        @if( auth()->check() and auth()->user()->role->name=='anunciante' )
+            <a id="link-agregar-favorito">
+                <i class="fa fa-fw fa-heart-o"></i>&nbsp;Añadir a mis favoritos
+            </a>
+            <div class="text-center">
+                <a type="button" class="btn btn-sm btn-secondary" id="link-favoritos">
+                    <b>Ir a mis favoritos</b>
+                </a>
+            </div>
+        @else
             <a id="link-agregar-favorito" data-toggle="modal" data-target="#modal-login">
                 <i class="fa fa-fw fa-heart-o"></i>&nbsp;Añadir a mis favoritos
             </a>
-        @endguest
-        <div class="text-center">
-            @guest
+            <div class="text-center">
                 <a type="button" class="btn btn-sm btn-secondary" id="link-favoritos" data-toggle="modal" data-target="#modal-login">
                     <b>Ir a mis favoritos</b>
                 </a>
-            @endguest
-        </div>
+            </div>
+        @endif
     </div>
     <div class="sidebar-panel text-center" id="compartir">
         <b>Compartir este espacio de pauta</b><br><br>

@@ -33,8 +33,19 @@ Route::get('activar', function() {
 Route::get('login', function() {
     return redirect()->away(config('app.url'));
 })->name('login');
+Route::post('login', function() {
+    if( Illuminate\Support\Facades\Auth::attempt(request()->only(['email', 'password'])) ) {
+        return redirect()->back();
+    }
+
+    return ['success' => false];
+});
 
 Route::get('espacios/{espacio}', function( \DondePauto\Models\Espacio $espacio ) {
+    DB::connection('dondepauto')->table('__vistas')->insert([
+        'usuario_id' => Auth::check() ? Auth::id() : null,
+        'espacio_id' => $espacio->id,
+    ]);
     return view('dondepauto::pages.espacio', compact('espacio'));
 })->name('espacio');
 

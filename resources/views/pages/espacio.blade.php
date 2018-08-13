@@ -49,6 +49,18 @@
     </div>
 
     @include('dondepauto::website.partials.banner-contactanos')
+
+    {{-- BOTON DE ASESORIA --}}
+    <button type="button" class="btn btn-success d-none d-sm-block" id="btn-soporte" data-toggle="modal" data-target="#modal-asesoria">
+        <img src="/images/icon-soporte.png">
+    </button>
+
+    {{-- MODALS --}}
+    @include('dondepauto::website.modals.asesoria')
+    @include('dondepauto::website.modals.cotizar')
+    @if( !auth()->check() or auth()->user()->role->name!='anunciante' )
+        @include('dondepauto::website.modals.login')
+    @endif
 @endsection
 
 @section('css')

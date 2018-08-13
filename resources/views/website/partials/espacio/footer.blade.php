@@ -1,10 +1,22 @@
 <div class="row footer d-flex d-sm-none">
-    @guest
+    @if( auth()->check() )
         <div class="col-12 footer-panel" id="footer-precio">
-            <img src="/images/espacio/icon-precio.png"></img>
+            <img src="/images/espacio/icon-precio.png">
+            <span style="font-size: 24px; font-weight: bold; position: relative; top: 6px;">
+                <?php $precio = isset($espacio->data->precio->valor) ? $espacio->data->precio->valor : 0; ?>
+                <?php $margen = isset($espacio->data->precio->margen) ? $espacio->data->precio->margen : 15; ?>
+                {{ '$ '.number_format((100/(100 - $margen))*$precio) }}
+            </span>
+            <span style="position: relative; top: 6px;">
+                / {{ isset($espacio->data->periodo) ? strtolower($espacio->data->periodo) : '' }}
+            </span>
+        </div>
+    @else
+        <div class="col-12 footer-panel" id="footer-precio">
+            <img src="/images/espacio/icon-precio.png">
             <a id="footer-link-login" data-toggle="modal" data-target="#modal-login">Inicia sesión para ver el precio</a>
         </div>
-    @endguest
+    @endif
     <div class="col-6 footer-panel" id="footer-cotizar">
         <button type="button" class="btn btn-lg btn-orange" id="footer-btn-cotizar" data-toggle="modal" data-target="#modal-cotizar">
             <b>Cotizar</b>
@@ -25,7 +37,7 @@
             position: -moz-sticky;
             position: -ms-sticky;
             position: -o-sticky;
-            bottom: 0;
+            bottom: 55px;
             z-index: 15;
         }
         .footer-panel {
@@ -42,6 +54,7 @@
         }
         #footer-precio {
             padding: 7.5px;
+            color: #ccc;
         }
         #footer-precio #footer-link-login {
             text-decoration: underline;

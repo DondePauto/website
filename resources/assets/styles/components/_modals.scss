@@ -1,0 +1,63 @@
+/**
+ * Estilos de modales.
+ */
+.modal {
+  .btn:not(.close) {
+    font-weight: bold;
+    color: white;
+  }
+
+  .modal-header {
+    border: none;
+  }
+
+  .modal-body {
+    border: none;
+  }
+
+  .modal-footer {
+    border: none;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .btn:not(.close) {
+      width: 40vw;
+    }
+
+    .modal-dialog {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .modal-content {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+
+    .modal-header {
+      padding: 10px 1rem;
+      color: white;
+      background-color: #00aeef;
+
+      button {
+        margin: 0;
+        padding: 0;
+        color: white;
+        opacity: 1;
+      }
+    }
+
+    .modal-body {
+      max-height: calc(100vh - 45px);
+      overflow: hidden;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .modal-body {
+      padding: 30px;
+    }
+  }
+}

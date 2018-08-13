@@ -10,7 +10,7 @@
                             <div class="card-title">{{ $espacio->titulo }}</div>
                             <hr class="card-separator">
                             <div class="categoria">{{ $espacio->data->categoria==null ? '' : $espacio->data->categoria->nombre }}</div>
-                            <a href="{{ route('espacio', compact('espacio')) }}" type="button" class="btn btn-danger btn-ver-mas">
+                            <a href="{{ route('espacio', compact('espacio')) }}" target="_blank" type="button" class="btn btn-danger btn-ver-mas">
                                 <b>Ver más</b>
                             </a>
                         </div>

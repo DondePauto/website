@@ -13,7 +13,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item d-block d-sm-none" id="link-home">
                 <a class="nav-link" href="{{ route('home') }}">
-                    <img src="{{ route('files.brand', ['path' => 'logo-light_-h35-cwhite.png']) }}">
+                    <img src="{{ route('files.brand', ['path' => 'logo-light_-h35-cwhite']) }}">
                 </a>
             </li>
             <li class="nav-item" id="link-buscar">
