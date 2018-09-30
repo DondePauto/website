@@ -18,8 +18,8 @@
 
     {{-- MODALS --}}
     @include('dondepauto::website.modals.asesoria')
-    @include('dondepauto::website.modals.cotizar')
-    @if( !auth()->check() or auth()->user()->role->name!='anunciante' )
+    @if( !auth()->check() or !in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
+        @include('dondepauto::website.modals.home-registro')
         @include('dondepauto::website.modals.login')
         @include('dondepauto::website.modals.reset-password')
     @endif
@@ -27,6 +27,19 @@
 
 @section('css')
 <style type="text/css">
+    @font-face {
+        font-family: voyager;
+        src: url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.eot') }});
+        src: url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.eot?#iefix') }}) format("embedded-opentype"),
+             url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.woff') }}) format("woff"),
+             url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.ttf') }}) format("truetype"),
+             url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.svg#voyager') }}) format("svg");
+        font-weight:400;
+        font-style:normal;
+    }
+    .voyager { font-family: voyager; font-size: 25px; }
+    .voyager-bubble:before { content:"\e011" } .voyager-megaphone:before { content:"\e00e" }
+
     .home .h1 {
         text-transform: uppercase;
         text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);

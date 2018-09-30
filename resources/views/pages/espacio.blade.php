@@ -58,8 +58,10 @@
     {{-- MODALS --}}
     @include('dondepauto::website.modals.asesoria')
     @include('dondepauto::website.modals.cotizar')
-    @if( !auth()->check() or auth()->user()->role->name!='anunciante' )
+    @if( !auth()->check() or !in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
+        @include('dondepauto::website.modals.home-registro')
         @include('dondepauto::website.modals.login')
+        @include('dondepauto::website.modals.reset-password')
     @endif
 @endsection
 
