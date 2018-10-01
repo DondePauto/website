@@ -35,7 +35,15 @@
     /* global $ */
     document.addEventListener('DOMContentLoaded', function() {
         $(function() {
-            setTimeout(function() { $('#modal-home-registro').modal(); }, 30*1000);
+            setTimeout(function() {
+                if( ($('#modal-login').data('bs.modal') || {})._isShown ) {
+                    $('#modal-login').on('hidden.bs.modal', function() {
+                        $('#modal-home-registro').modal();
+                    });
+                } else {
+                    $('#modal-home-registro').modal();
+                }
+            }, 30*1000);
         });
     });
 </script>
