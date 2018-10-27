@@ -3,6 +3,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="text-center text-uppercase font-weight-bold" style="width: 100vw;">Bienvenido a DóndePauto</div>
+                @if( !isset($is_espacio) )
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                @endif
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -35,7 +40,7 @@
     /* global $ */
     document.addEventListener('DOMContentLoaded', function() {
         $(function() {
-            setTimeout(function() {
+            var modal_home_registro_show = function() {
                 if( ($('#modal-login').data('bs.modal') || {})._isShown ) {
                     $('#modal-login').on('hidden.bs.modal', function() {
                         $('#modal-home-registro').modal();
@@ -43,7 +48,12 @@
                 } else {
                     $('#modal-home-registro').modal();
                 }
-            }, 30*1000);
+            }
+            @if( isset($is_espacio) )
+                modal_home_registro_show();
+            @else
+                setTimeout(modal_home_registro_show, 30*1000);
+            @endif
         });
     });
 </script>

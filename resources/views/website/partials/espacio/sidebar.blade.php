@@ -21,7 +21,9 @@
                 <b>Cotizar</b>
             </button>
         </div>
+        {{--
         @if( auth()->check() and auth()->user()->role->name=='anunciante' )
+            <!--
             <a id="link-agregar-favorito">
                 <i class="fa fa-fw fa-heart-o"></i>&nbsp;Añadir a mis favoritos
             </a>
@@ -30,7 +32,9 @@
                     <b>Ir a mis favoritos</b>
                 </a>
             </div>
+            -->
         @else
+            <!--
             <a id="link-agregar-favorito" data-toggle="modal" data-target="#modal-login">
                 <i class="fa fa-fw fa-heart-o"></i>&nbsp;Añadir a mis favoritos
             </a>
@@ -39,7 +43,9 @@
                     <b>Ir a mis favoritos</b>
                 </a>
             </div>
+            -->
         @endif
+        --}}
     </div>
     <div class="sidebar-panel text-center" id="compartir">
         <b>Compartir este espacio de pauta</b><br><br>

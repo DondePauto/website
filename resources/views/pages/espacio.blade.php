@@ -58,8 +58,11 @@
     {{-- MODALS --}}
     @include('dondepauto::website.modals.asesoria')
     @include('dondepauto::website.modals.cotizar')
-    @if( !auth()->check() or !in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
+    @if( !auth()->check() )
+        <?php $is_espacio = true ?>
         @include('dondepauto::website.modals.home-registro')
+    @endif
+    @if( !auth()->check() or !in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
         @include('dondepauto::website.modals.login')
         @include('dondepauto::website.modals.reset-password')
     @endif
