@@ -1,5 +1,6 @@
 <!-- META TAGS -->
 <?php define('RUTA', request()->route() ? request()->route()->getName() : 'home'); ?>
+
 <title>@yield('title', config('app.name').' - '.setting('website.descripcion_'.RUTA))</title>
 <meta name="description" content="@yield('description', setting('website.descripcion_'.RUTA))">
 <meta name="copyright" content="{{ config('app.name') }}">

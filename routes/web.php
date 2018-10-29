@@ -11,6 +11,9 @@
 */
 
 Route::get('', function() {
+    if( request()->has('aud') or request()->has('cat') or request()->has('pag') ) {
+        abort(404); return;
+    }
     return view('dondepauto::pages.home');
 })->name('home');
 
