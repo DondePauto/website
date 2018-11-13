@@ -12,9 +12,16 @@
     @include('dondepauto::website.partials.banner-contactanos')
 
     {{-- BOTON DE ASESORIA --}}
-    <button type="button" class="btn btn-success" id="btn-soporte" data-toggle="modal" data-target="#modal-asesoria">
-        <img src="/images/icon-soporte.png">
+    <button type="button" class="btn btn-success btn-fab" id="btn-soporte" data-toggle="modal" data-target="#modal-asesoria">
+        <img src="/images/icon-soporte.png" data-toggle="tooltip" data-placement="left" title="Solicitar asesoría">
     </button>
+    {{-- BOTON DE AGREGAR ESPACIOS --}}
+    @if( auth()->check() and in_array(auth()->user()->role->name, ['admin', 'medio']) )
+        <a href="https://admin.dondepauto.co" type="button" class="btn btn-danger btn-fab" id="btn-agregar"
+            data-toggle="tooltip" data-placement="left" title="Agregar espacios">
+            <i class="fa fa-fw fa-2x fa-plus"></i>
+        </a>
+    @endif
 
     {{-- MODALS --}}
     @include('dondepauto::website.modals.asesoria')
@@ -29,6 +36,16 @@
 <style type="text/css">
     .buscar .h1 {
         text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+    }
+    #btn-soporte {
+        background: #00aa4e;
+    }
+    #btn-agregar {
+        background: #d43f3a;
+        bottom: 100px;
+    }
+    #btn-agregar i {
+        margin: 12.5px 0;
     }
 </style>
 @endsection

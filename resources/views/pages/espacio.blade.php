@@ -51,8 +51,8 @@
     @include('dondepauto::website.partials.banner-contactanos')
 
     {{-- BOTON DE ASESORIA --}}
-    <button type="button" class="btn btn-success d-none d-sm-block" id="btn-soporte" data-toggle="modal" data-target="#modal-asesoria">
-        <img src="/images/icon-soporte.png">
+    <button type="button" class="btn btn-success btn-fab" id="btn-soporte" data-toggle="modal" data-target="#modal-asesoria">
+        <img src="/images/icon-soporte.png" data-toggle="tooltip" data-placement="left" title="Solicitar asesoría">
     </button>
 
     {{-- MODALS --}}

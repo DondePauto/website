@@ -12,8 +12,8 @@
     @include('dondepauto::website.partials.home.banner-blog')
 
     {{-- BOTON DE ASESORIA --}}
-    <button type="button" class="btn btn-success" id="btn-soporte" data-toggle="modal" data-target="#modal-asesoria">
-        <img src="/images/icon-soporte.png">
+    <button type="button" class="btn btn-success btn-fab" id="btn-soporte" data-toggle="modal" data-target="#modal-asesoria">
+        <img src="/images/icon-soporte.png" data-toggle="tooltip" data-placement="left" title="Solicitar asesoría">
     </button>
 
     {{-- MODALS --}}
@@ -29,19 +29,6 @@
 
 @section('css')
 <style type="text/css">
-    @font-face {
-        font-family: voyager;
-        src: url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.eot') }});
-        src: url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.eot?#iefix') }}) format("embedded-opentype"),
-             url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.woff') }}) format("woff"),
-             url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.ttf') }}) format("truetype"),
-             url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.svg#voyager') }}) format("svg");
-        font-weight:400;
-        font-style:normal;
-    }
-    .voyager { font-family: voyager; font-size: 25px; }
-    .voyager-bubble:before { content:"\e011" } .voyager-megaphone:before { content:"\e00e" }
-
     .home .h1 {
         text-transform: uppercase;
         text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);

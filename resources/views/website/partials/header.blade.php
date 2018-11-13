@@ -26,12 +26,29 @@
             <li class="nav-item">
                 <a class="nav-link btn btn-nav-orange" href="{{ config('app.url') }}/registro">Regístrate</a>
             </li>
+            @if( !auth()->check() )
+                <li class="nav-item">
+                    <a class="nav-link btn btn-nav-orange" data-toggle="modal" data-target="#modal-login">Ingresa</a>
+                </li>
+            @endif
             <li class="nav-item">
-                <a class="nav-link btn btn-nav-orange" data-toggle="modal" data-target="#modal-login">Ingresa</a>
+                @if( auth()->check() and in_array(auth()->user()->role->name, ['admin', 'medio']) )
+                    <a class="nav-link btn btn-nav-orange-dark" href="https://admin.dondepauto.co">Vende tus espacios</a>
+                @else
+                    <a class="nav-link btn btn-nav-orange-dark" href="{{ config('app.url') }}/registro">Vende tus espacios</a>
+                @endif
             </li>
-            <li class="nav-item">
-                <a class="nav-link btn btn-nav-orange-dark" href="{{ config('app.url') }}/registro">Vende tus espacios</a>
-            </li>
+            @if( auth()->check() )
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <form action="https://api.dondepauto.co/logout" method="POST">
+                            {{ csrf_field() }}
+                            <input type="submit" class="btn btn-block" value="Cerrar sesión"
+                                style="padding: 0; font-weight: bold; color: white; border: none; background: none;"/>
+                        </form>
+                    </a>
+                </li>
+            @endif
         </ul>
     </div>
 </header>

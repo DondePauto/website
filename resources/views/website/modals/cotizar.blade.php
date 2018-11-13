@@ -15,7 +15,7 @@
                 </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-orange" data-dismiss="modal">Cancelar</button>
-                    @if( auth()->check() and auth()->user()->role->name=='anunciante' )
+                    @if( auth()->check() and in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
                         <button type="button" class="btn btn-orange" id="btn-submit-cotizar">Enviar</button>
                         <script type="text/javascript">
                             document.addEventListener("DOMContentLoaded", function() {

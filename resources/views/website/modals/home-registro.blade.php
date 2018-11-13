@@ -59,6 +59,19 @@
 </script>
 
 <style type="text/css">
+    @font-face {
+        font-family: voyager;
+        src: url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.eot') }});
+        src: url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.eot?#iefix') }}) format("embedded-opentype"),
+             url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.woff') }}) format("woff"),
+             url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.ttf') }}) format("truetype"),
+             url({{ asset('vendor/tcg/voyager/assets/fonts/voyager.svg#voyager') }}) format("svg");
+        font-weight:400;
+        font-style:normal;
+    }
+    .voyager { font-family: voyager; font-size: 25px; }
+    .voyager-bubble:before { content:"\e011" } .voyager-megaphone:before { content:"\e00e" }
+
     .modal#modal-home-registro {
         background: rgba(0, 0, 0, 0.5);
     }

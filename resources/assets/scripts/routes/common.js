@@ -4,6 +4,11 @@ import PerfectScrollbar from 'perfect-scrollbar';
 export default {
     init() {
         /**
+         * Activa los tooltips de todos los elementos que lo definan.
+         */
+        $('[data-toggle=tooltip]').tooltip();
+
+        /**
          * Obtiene el evento de fin de animacion para el explorador actual.
          * Este evento es usado por animate.css.
          */
