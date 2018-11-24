@@ -47,17 +47,17 @@
         @endif
         --}}
     </div>
-    <div class="sidebar-panel text-center" id="compartir">
+    <div class="sidebar-panel text-center" id="sidebar-compartir">
         <b>Compartir este espacio de pauta</b><br><br>
-        <?php $body    = setting('website.descripcion').'%0A%0A'.request()->fullUrl(); ?>
+        <?php $body    = $espacio->titulo.'%0A%0A'.request()->fullUrl(); ?>
         <?php $subject = 'Hola! Te comparto este espacio de pauta'; ?>
-        <a href="//facebook.com/sharer/sharer.php?u={{ request()->fullUrl() }}" class="btn-share">
+        <a href="//facebook.com/sharer/sharer.php?u={{ request()->fullUrl() }}" target="_blank" class="btn-share">
             <i class="fa fa-fw fa-3x fa-facebook text-lightblue"></i>
         </a>
-        <a href="//twitter.com/intent/tweet?text={{ $body }}" class="btn-share">
+        <a href="//twitter.com/intent/tweet?text={{ $body }}&via=Dondepauto" target="_blank" class="btn-share">
             <i class="fa fa-fw fa-3x fa-twitter text-lightblue"></i>
         </a>
-        <a href="mailto:@?subject={{ $subject }}&body={{ $body }}" class="btn-share">
+        <a href="mailto:@?subject={{ $subject }}&body={{ $body }}" target="_blank" class="btn-share">
             <i class="fa fa-fw fa-3x fa-envelope text-lightblue"></i>
         </a>
     </div>
