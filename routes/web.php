@@ -25,6 +25,10 @@ Route::get('registro', function() {
     return view('dondepauto::pages.registro');
 })->name('registro');
 
+Route::get('blog', function() {
+    return view('dondepauto::pages.blogs');
+})->name('blogs');
+
 Route::get('activar', function() {
     $codigo  = isset(array_keys(request()->query())[0]) ? array_keys(request()->query())[0] : null;
     $usuario = \DondePauto\Models\Usuario::where('password', 'like', 'code:'.$codigo)->first();
@@ -38,10 +42,12 @@ Route::get('login', function() {
 })->name('login');
 Route::post('login', function() {
     if( Illuminate\Support\Facades\Auth::attempt(request()->only(['email', 'password'])) ) {
-        return redirect()->back();
+        if( Illuminate\Support\Facades\Auth::user()->role->name=='medio' ) {
+            return redirect()->away('https://admin.dondepauto.co');
+        }
     }
 
-    return ['success' => false];
+    return redirect()->away(config('app.url'));
 });
 
 Route::get('espacios/{espacio}', function( \DondePauto\Models\Espacio $espacio ) {
@@ -51,6 +57,12 @@ Route::get('espacios/{espacio}', function( \DondePauto\Models\Espacio $espacio )
     ]);
     return view('dondepauto::pages.espacio', compact('espacio'));
 })->name('espacio');
+Route::get('blog/{blog}', function( \DondePauto\Models\Extras\Blog $blog) {
+    if( !$blog->visible )
+        return abort(404);
+    $blog->increment('vistas');
+    return view('dondepauto::pages.blog', compact('blog'));
+})->name('blog');
 
 Route::get('documento/{documento}', function( $documento ) {
     $url = '/documento/'.$documento;

@@ -1,7 +1,9 @@
 <div class="row text-center" id="banner-blog">
     <div class="full-width">
-        <img src="images/home/icon-blog.png" class="header-icon">
-        <h2 class="h2">Nuestro blog</h2>
+        <a href="/blog" style="text-decoration: none; cursor: pointer;">
+            <img src="images/home/icon-blog.png" class="header-icon">
+            <h2 class="h2">Nuestro blog</h2>
+        </a>
         <p>Lee nuestros artículos y conoce nuestra visión del marketing, la publicidad y la comercialización de espacios publicitarios.</p>
         <div class="row">
             @foreach( DondePauto\Models\Extras\Blog::ultimos(4) as $blog )
