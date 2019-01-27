@@ -21,6 +21,7 @@ export default {
                     'nombre': $('.form [name=nombre]').val(),
                     'apellido': $('.form [name=apellido]').val(),
                     'email': $('.form [name=email]').val(),
+                    'validate_email': true,
                     'celular': $('.form [name=celular]').val(),
                     'empresa': $('.form [name=empresa]').val(),
                     'role': $('.form [name=role]:checked').val(),

@@ -20,14 +20,17 @@
     <style type="text/css">
         #banner-buscar {
             color: white;
-            background-image: url(images/home/banner-buscar.png);
+            background-image: url(images/home/banner-home.png);
+            background-size: 132.5%;
+            background-position: 15% 0%;
         }
         #banner-buscar #form {
             margin-top: 45px;
         }
         @media(max-width: 576px) {
             #banner-buscar {
-                background-position-x: 100%;
+                background-size: cover;
+                background-position-x: 0%;
             }
         }
         @media(min-width: 576px) {

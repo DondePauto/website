@@ -15,6 +15,7 @@
             height: 75vh;
             color: white;
             background-image: url(images/home/banner-registrar.png);
+            background-position-y: 0%;
         }
         #banner-registrar .h1 {
             text-transform: none;

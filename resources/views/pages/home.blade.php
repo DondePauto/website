@@ -1,7 +1,7 @@
 @extends('dondepauto::website.base')
 
 @section('content')
-    @include('dondepauto::website.partials.home.banner-buscar')
+    @include('dondepauto::website.partials.home.banner-home')
 
     @include('dondepauto::website.partials.home.banner-info')
 
