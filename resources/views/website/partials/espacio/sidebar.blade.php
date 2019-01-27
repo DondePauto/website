@@ -3,9 +3,7 @@
         <img src="/images/espacio/icon-precio.png">
         @if( auth()->check() )
             <span style="font-size: 24px; font-weight: bold; position: relative; top: 6px;">
-                <?php $precio = isset($espacio->data->precio->valor) ? $espacio->data->precio->valor : 0; ?>
-                <?php $margen = isset($espacio->data->precio->margen) ? $espacio->data->precio->margen : 15; ?>
-                {{ '$ '.number_format((100/(100 - $margen))*$precio) }}
+                {{ '$ '.number_format($espacio->precioPublico) }}
             </span>
             <span style="position: relative; top: 6px;">
                 / {{ isset($espacio->data->periodo) ? strtolower($espacio->data->periodo) : '' }}
@@ -18,7 +16,7 @@
         <div class="text-center">
             <b>¿Te interesa este espacio de pauta?</b>
             <button type="button" class="btn btn-orange" id="sidebar-btn-cotizar" data-toggle="modal" data-target="#modal-cotizar">
-                <b>Cotizar</b>
+                <b style="font-size: 0.8rem;">Descargar cotización</b>
             </button>
         </div>
         {{--

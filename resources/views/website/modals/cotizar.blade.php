@@ -16,10 +16,11 @@
                 <div class="text-center">
                     <button type="button" class="btn btn-orange" data-dismiss="modal">Cancelar</button>
                     @if( auth()->check() and in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
-                        <button type="button" class="btn btn-orange" id="btn-submit-cotizar">Enviar</button>
+                        <button type="button" class="btn btn-orange" id="btn-submit-cotizar">Descargar</button>
                         <script type="text/javascript">
                             document.addEventListener("DOMContentLoaded", function() {
                                 $('#btn-submit-cotizar').click(function() {
+                                    window.location.href = 'https://files.dondepauto.co/espacios/{{ $espacio->id }}/cotizacion.pdf';
                                     $.ajax({
                                         'url': 'https://api.dondepauto.co/cotizar',
                                         'type': 'post',
