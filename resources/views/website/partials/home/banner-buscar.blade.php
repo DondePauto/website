@@ -6,7 +6,7 @@
         </h1>
         <div id="form">
             <div class="input-group input-group-lg">
-                <input type="text" placeholder="Busca aquí" class="form-control" id="palabra">
+                <input type="text" placeholder="Buscar medio" class="form-control" id="palabra">
                 <div class="input-group-append">
                     <button type="button" class="btn btn-danger" id="btn-buscar">
                         <i class="fa fa-fw fa-lg fa-search fa-flip-horizontal d-block d-sm-none"></i>

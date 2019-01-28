@@ -41,6 +41,21 @@ export default {
         });
 
         /**
+         * Respuesta al evento 'click' del botón de búsqueda.
+         * Respuesta al evento 'keyup' del campo de texto.
+         */
+        function REDIRECT() {
+            var value = $('header .form-inline input').val();
+            if( !value )
+                return;
+            window.location.href = '/buscar?palabra=' + value;
+        }
+        $('header .form-inline input[type=search]').keyup(function(event) {
+            if( event.keyCode==13 )
+                REDIRECT();
+        });
+
+        /**
          * Habilitación de Perfect Scrollbar cuando se abre o cierra un modal.
          */
         var ps_modal; $(function() {
