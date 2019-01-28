@@ -1,6 +1,9 @@
 @extends('dondepauto::website.base')
 
 @section('content')
+    <div class="d-sm-none">
+        @include('dondepauto::website.partials.home.banner-buscar')
+    </div>
     @include('dondepauto::website.partials.home.banner-home')
 
     @include('dondepauto::website.partials.home.banner-info')

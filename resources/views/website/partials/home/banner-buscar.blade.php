@@ -2,7 +2,7 @@
     <div class="full-width vertical-center-content">
         <h1 class="h1">
             <span>Encuentra los mejores</span>
-            <span><br>espacios de pauta para tu marca o producto</span>
+            <span><br><a href="/buscar" id="banner-home-link">medios publicitarios</a> para tu marca o producto</span>
         </h1>
         <div id="form">
             <div class="input-group input-group-lg">
@@ -18,11 +18,20 @@
     </div>
 
     <style type="text/css">
+        .home .h1 span:last-of-type {
+            font-size: 1.4rem;
+            line-height: 1.4rem;
+        }
         #banner-buscar {
             color: white;
             background-image: url(images/home/banner-home.png);
             background-size: 132.5%;
             background-position: 15% 0%;
+        }
+        #banner-home-link {
+            color: {{ config('dondepauto.colores.orange') }};
+            text-transform: uppercase;
+            text-decoration: none;
         }
         #banner-buscar #form {
             margin-top: 45px;

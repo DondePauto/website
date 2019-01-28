@@ -1,7 +1,7 @@
 <div class="row text-center banner" id="banner-home">
-    <div class="full-width vertical-center-content" style="padding: 0 40px;">
+    <div class="full-width vertical-center-content">
         <div class="row">
-            <div class="col-12 col-sm-8" id="banner-text">
+            <div class="col-12 col-sm-8 d-none d-sm-inline-block" id="banner-text">
                 <div style="position: absolute; top: 50%; transform: translateY(-50%);">
                     <h1 class="h1">
                         <div style="font-size: 3.225rem; line-height: 3.225rem;">Encuentra los mejores</div>
@@ -17,40 +17,38 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 d-none d-sm-block">
-                <div id="form-register">
-                    <div class="text-center">
-                        <div style="margin-bottom: 10px;">
-                            <b>En DóndePauto te ayudamos a encontrar el medio publicitario que estás buscando</b>
-                        </div>
-                        <div class="row">
-                            <div class="col form-group">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" class="form-control form-control-sm" required>
-                            </div>
-                            <div class="col form-group">
-                                <label for="apellido">Apellido</label>
-                                <input type="text" name="apellido" class="form-control form-control-sm" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="nombre">Correo electrónico</label>
-                            <input type="email" name="email" class="form-control form-control-sm" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nombre">Celular</label>
-                            <input type="text" name="celular" class="form-control form-control-sm" required>
-                        </div>
-                        <input type="submit" id="btn-banner-registro-submit" class="btn" value="Solicitar asesoría">
+            <div class="col-12 col-sm-4" id="form-register">
+                <div class="text-center">
+                    <div style="margin-bottom: 10px;">
+                        <b>En DóndePauto te ayudamos a encontrar el medio publicitario que estás buscando</b>
                     </div>
-                    <div class="text-center">
-                        <?php $phone = json_decode(setting('contacto.telefonos'))[0]; ?>
-                        <b>¡Llámanos ya! {{ $phone->valor }}</b><hr>
-                        <div class="disclaimer">
-                            Al hacer click en "Solicitar asesoría", usted acepta los
-                            <a href="/documento/terminos-condiciones">Términos y Condiciones</a> y
-                            la <a href="/documento/terminos-condiciones">Política de Tratamiento de Datos</a> de DóndePauto.
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" class="form-control form-control-sm" required>
                         </div>
+                        <div class="col form-group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="apellido" class="form-control form-control-sm" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Correo electrónico</label>
+                        <input type="email" name="email" class="form-control form-control-sm" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Celular</label>
+                        <input type="text" name="celular" class="form-control form-control-sm" required>
+                    </div>
+                    <input type="submit" id="btn-banner-registro-submit" class="btn" value="Solicitar asesoría">
+                </div>
+                <div class="text-center">
+                    <?php $phone = json_decode(setting('contacto.telefonos'))[0]; ?>
+                    <b>¡Llámanos ya! {{ $phone->valor }}</b><hr>
+                    <div class="disclaimer">
+                        Al hacer click en "Solicitar asesoría", usted acepta los
+                        <a href="/documento/terminos-condiciones">Términos y Condiciones</a> y
+                        la <a href="/documento/terminos-condiciones">Política de Tratamiento de Datos</a> de DóndePauto.
                     </div>
                 </div>
             </div>
@@ -63,6 +61,9 @@
             background-image: url(images/home/banner-home.png);
             background-size: 132.5%;
             background-position: 15% 0%;
+        }
+        #banner-home>.full-width {
+            padding: 0 40px;
         }
         #banner-home #banner-text div {
             width: 740px;
@@ -112,6 +113,9 @@
             text-decoration: underline;
         }
         @media(max-width: 576px) {
+            #banner-home>.full-width {
+                padding: 0 20px;
+            }
             #banner-home {
                 background-size: cover;
                 background-position-x: 0%;
