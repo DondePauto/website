@@ -10,6 +10,9 @@
             <form method="POST" action="https://dondepauto.co/registro" class="row justify-content-center text-left form">
                 {{ csrf_field() }}
                 <input type="hidden" name="validate_email" value="true">
+                @if( request()->has('medio') )
+                    <input type="hidden" name="redirect" value="https://admin.dondepauto.co/espacios-crear">
+                @endif
                 <div class="col-12 col-sm-6 form-group animated">
                     <label for="nombre">Nombre <b class="text-danger">*</b></label>
                     <input type="text" name="nombre" value="{{ old('nombre') }}" class="form-control">
@@ -53,8 +56,11 @@
                 </div>
                 <div class="col-6 col-sm-5 text-center form-group col-radio">
                     <label class="radio animated">
-                        <input type="radio" name="role" value="Anunciante"
-                            {{ old('role')=='Anunciante' ? ' checked' : '' }}>
+                        @if( old('role')=='Anunciante' or request()->has('anunciante') )
+                            <input type="radio" name="role" value="Anunciante" checked>
+                        @else
+                            <input type="radio" name="role" value="Anunciante">
+                        @endif
                         <div>
                             <div class="voyager voyager-bubble"></div>
                             <b>Anunciante</b><br>
@@ -64,8 +70,11 @@
                 </div>
                 <div class="col-6 col-sm-5 text-center form-group col-radio">
                     <label class="radio animated">
-                        <input type="radio" name="role" value="Medio Publicitario"
-                            {{ old('role')=='Medio Publicitario' ? ' checked' : '' }}>
+                        @if( old('role')=='Medio Publicitario' or request()->has('medio') )
+                            <input type="radio" name="role" value="Medio Publicitario" checked>
+                        @else
+                            <input type="radio" name="role" value="Medio Publicitario">
+                        @endif
                         <div>
                             <div class="voyager voyager-megaphone"></div>
                             <b>Medio publicitario</b><br>
