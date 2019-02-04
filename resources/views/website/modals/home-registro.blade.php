@@ -49,11 +49,6 @@
                     $('#modal-home-registro').modal();
                 }
             }
-            @if( isset($is_espacio) )
-                modal_home_registro_show();
-            @else
-                setTimeout(modal_home_registro_show, 30*1000);
-            @endif
         });
     });
 </script>

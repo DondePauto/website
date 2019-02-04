@@ -13,44 +13,6 @@ export default {
             }).resize();
 
             /**
-             * Evento 'click' del botón de registro.
-             */
-            $('#btn-submit').click(function() {
-                $('.feedback').hide(250);
-                $.post('https://api.dondepauto.co/registro', {
-                    'nombre': $('.form [name=nombre]').val(),
-                    'apellido': $('.form [name=apellido]').val(),
-                    'email': $('.form [name=email]').val(),
-                    'validate_email': true,
-                    'celular': $('.form [name=celular]').val(),
-                    'empresa': $('.form [name=empresa]').val(),
-                    'role': $('.form [name=role]:checked').val(),
-                    'consent': $('.form [name=consent]').val(),
-                    'consent_timestamp': $('.form [name=consent_timestamp]').val(),
-                }, function() {
-                    alert('Tu registro ha sido exitoso! Hemos enviado un enlace de activación a tu correo para que puedas continuar con el proceso');
-                    window.location.href = '/';
-                }).fail(function(error) {
-                    console.clear();
-                    var response = error.responseJSON;
-                    var first    = Object.keys(response.errors)[0];
-
-                    var scroll = $('.main').scrollTop(); $('.main').scrollTop(0);
-                    var offset = $('.form [name=' + first + ']').offset().top-50;
-                    $('.main').scrollTop(scroll).animate({'scrollTop': offset}, 500, function() {
-                        Object.keys(response.errors).forEach(function(field) {
-                            $('#feedback-' + field).html(response.errors[field][0]).show(250);
-                        });
-                        var inputs = Object.keys(response.errors).map(function(field) { return '.form [name=' + field + ']'; }).join(', ');
-                        $(inputs).addClass('is-invalid').parent().one(window.ANIMATION_END, function() {
-                            $(this).removeClass('shake is-invalid');
-                            $(inputs).removeClass('is-invalid');
-                        }).addClass('shake is-invalid');
-                    });
-                });
-            });
-
-            /**
              * Evento 'click' de la casilla de consentimiento.
              */
             $('#icon-consent').click(function() {

@@ -79,12 +79,29 @@
   .navbar.bg-opaque {
     background: white !important;
 
-    #link-buscar a {
+    #link-buscar a,
+    #link-registro a,
+    #link-sesion a {
       color: $lightblue !important;
     }
 
-    #link-buscar a:hover {
+    #link-buscar a:hover,
+    #link-registro a:hover,
+    #link-sesion a:hover {
       color: $orange !important;
+    }
+
+    .form-inline input {
+      color: unset;
+    }
+
+    .form-inline .input-group-prepend {
+      color: $orange;
+    }
+
+    .form-inline input,
+    .form-inline .input-group-prepend {
+      background: transparent;
     }
   }
 

@@ -7,39 +7,54 @@
         <div class="container-fluid text-center">
             <h1 class="h1">Crea tu cuenta y accede a los servicios y herramientas que te ofrece DóndePauto.CO</h1>
             <hr style="margin: 0 0 25px; border: 2.5px solid {{ config('dondepauto.colores.lightblue') }};">
-            <div class="row justify-content-center text-left form">
+            <form method="POST" action="https://dondepauto.co/registro" class="row justify-content-center text-left form">
+                {{ csrf_field() }}
+                <input type="hidden" name="validate_email" value="true">
                 <div class="col-12 col-sm-6 form-group animated">
                     <label for="nombre">Nombre <b class="text-danger">*</b></label>
-                    <input type="text" name="nombre" class="form-control">
-                    <div class="feedback text-danger" id="feedback-nombre"></div>
+                    <input type="text" name="nombre" value="{{ old('nombre') }}" class="form-control">
+                    @if( $errors->has('nombre') )
+                        <div class="feedback text-danger" id="feedback-nombre">{{ $errors->first('nombre') }}</div>
+                    @endif
                 </div>
                 <div class="col-12 col-sm-6 form-group animated">
                     <label for="apellido">Apellido <b class="text-danger">*</b></label>
-                    <input type="text" name="apellido" class="form-control">
-                    <div class="feedback text-danger" id="feedback-apellido"></div>
+                    <input type="text" name="apellido" value="{{ old('apellido') }}" class="form-control">
+                    @if( $errors->has('apellido') )
+                        <div class="feedback text-danger" id="feedback-apellido">{{ $errors->first('apellido') }}</div>
+                    @endif
                 </div>
                 <div class="col-12 col-sm-6 form-group animated">
                     <label for="email">Correo electrónico <b class="text-danger">*</b></label>
-                    <input type="email" name="email" class="form-control">
-                    <div class="feedback text-danger" id="feedback-email"></div>
+                    <input type="email" name="email" value="{{ old('email') }}" class="form-control">
+                    @if( $errors->has('email') )
+                        <div class="feedback text-danger" id="feedback-email">{{ $errors->first('email') }}</div>
+                    @endif
                 </div>
                 <div class="col-12 col-sm-6 form-group animated">
                     <label for="celular">Celular  <b class="text-danger">*</b></label>
-                    <input type="text" name="celular" class="form-control">
-                    <div class="feedback text-danger" id="feedback-celular"></div>
+                    <input type="text" name="celular" value="{{ old('celular') }}" class="form-control">
+                    @if( $errors->has('celular') )
+                        <div class="feedback text-danger" id="feedback-celular">{{ $errors->first('celular') }}</div>
+                    @endif
                 </div>
                 <div class="col-12 form-group animated">
                     <label for="empresa">Empresa <b class="text-danger">*</b></label>
-                    <input type="text" name="empresa" class="form-control">
-                    <div class="feedback text-danger" id="feedback-empresa"></div>
+                    <input type="text" name="empresa" value="{{ old('empresa') }}" class="form-control">
+                    @if( $errors->has('empresa') )
+                        <div class="feedback text-danger" id="feedback-empresa">{{ $errors->first('empresa') }}</div>
+                    @endif
                 </div>
                 <div class="col-12 text-center">
                     <b class="text-lightblue">Selecciona cómo deseas registrarte en DóndePauto:</b>
-                    <div class="feedback text-danger" id="feedback-role"></div>
+                    @if( $errors->has('role') )
+                        <div class="feedback text-danger" id="feedback-role">{{ $errors->first('role') }}</div>
+                    @endif
                 </div>
                 <div class="col-6 col-sm-5 text-center form-group col-radio">
                     <label class="radio animated">
-                        <input type="radio" name="role" value="Anunciante">
+                        <input type="radio" name="role" value="Anunciante"
+                            {{ old('role')=='Anunciante' ? ' checked' : '' }}>
                         <div>
                             <div class="voyager voyager-bubble"></div>
                             <b>Anunciante</b><br>
@@ -49,7 +64,8 @@
                 </div>
                 <div class="col-6 col-sm-5 text-center form-group col-radio">
                     <label class="radio animated">
-                        <input type="radio" name="role" value="Medio Publicitario">
+                        <input type="radio" name="role" value="Medio Publicitario"
+                            {{ old('role')=='Medio Publicitario' ? ' checked' : '' }}>
                         <div>
                             <div class="voyager voyager-megaphone"></div>
                             <b>Medio publicitario</b><br>
@@ -58,10 +74,10 @@
                     </label>
                 </div>
                 <div class="col-12 text-left" id="consent">
-                    <input type="hidden" name="consent" value="no">
-                    <input type="hidden" name="consent_timestamp" value="">
+                    <input type="hidden" name="consent" value="yes">
+                    <input type="hidden" name="consent_timestamp" value="{{ time() }}">
                     <span>
-                        <i class="fa fa-fw fa-lg fa-square-o text-lightgray" id="icon-consent"></i>
+                        <i class="fa fa-fw fa-lg fa-check-square text-lightblue" id="icon-consent"></i>
                         <span>
                             Acepto los <a href="{{ route('documento', ['documento' => 'terminos-condiciones']) }}">términos y condiciones de uso</a>
                             y la <a href="{{ route('documento', ['documento' => 'politica-privacidad']) }}">política de tratamiento de datos</a> de DóndePauto.
@@ -69,12 +85,12 @@
                     </span>
                 </div>
                 <div class="col-12 text-center">
-                    <button type="button" class="btn btn-lg btn-orange" id="btn-submit">Registrarme</button>
+                    <input type="submit" value="Registrarme" class="btn btn-lg btn-orange" id="btn-submit">
                 </div>
                 <div class="col-12 text-center">
                     ¿Ya estás registrado?, inicia sesión <a data-toggle="modal" data-target="#modal-login">aquí</a>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 

@@ -45,8 +45,11 @@
                         margin: -1px 15px 0;
                         border: 1px solid {{ config('dondepauto.colores.orange') }} !important;
                         border-left: none !important;
-                        color: white !important;
-                        background: rgba(0, 0, 0, 0.5) !important;
+                        color: white;
+                        background: rgba(0, 0, 0, 0.5);
+                    }
+                    header .form-inline input:focus {
+                        box-shadow: none;
                     }
                 </style>
             </div>
@@ -57,20 +60,22 @@
                     <a class="nav-link btn btn-nav-orange" href="{{ config('app.url') }}/registro?medio">Publicar medio</a>
                 @endif
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="link-registro">
                 <a class="nav-link" href="{{ config('app.url') }}/registro">Regístrate</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="link-sesion">
                 @if( auth()->check() )
                     <a class="nav-link">
-                        <form action="https://api.dondepauto.co/logout" method="POST">
+                        <form method="POST" action="https://dondepauto.co/logout">
                             {{ csrf_field() }}
                             <input type="submit" class="btn btn-block" value="Cerrar sesión"
                                 style="padding: 0; font-weight: bold; color: white; border: none; background: none;"/>
                         </form>
                     </a>
                 @else
-                    <a class="nav-link" data-toggle="modal" data-target="#modal-login">Iniciar sesión</a>
+                    <a class="nav-link" data-toggle="modal" data-target="#modal-login">
+                        <span>Iniciar sesión</span>
+                    </a>
                 @endif
             </li>
         </ul>

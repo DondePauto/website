@@ -16,6 +16,9 @@ Route::get('', function() {
     }
     return view('dondepauto::pages.home');
 })->name('home');
+Route::get('home', function() {
+    return redirect()->away('https://dondepauto.co');
+});
 
 Route::get('buscar', function() {
     return view('dondepauto::pages.buscar');
@@ -24,6 +27,7 @@ Route::get('buscar', function() {
 Route::get('registro', function() {
     return view('dondepauto::pages.registro');
 })->name('registro');
+Route::post('registro', 'Auth\\RegisterController@register');
 
 Route::get('blog', function() {
     return view('dondepauto::pages.blogs');
@@ -48,6 +52,18 @@ Route::post('login', function() {
     }
 
     return redirect()->away(config('app.url'));
+});
+Route::post('logout', function() {
+    $session = DB::table('sessions')->get()->first(function($session) {
+        $payload = unserialize(base64_decode($session->payload));
+        return $payload['_token']==request()->_token;
+    });
+
+    DB::connection('dondepauto')->table('usuarios')->where('id', auth()->id())->update(['remember_token' => null]);
+    DB::table('sessions')->where('id', $session->id)->delete();
+    auth()->logout();
+
+    return redirect()->away('https://dondepauto.co');
 });
 
 Route::get('espacios/{espacio}', function( \DondePauto\Models\Espacio $espacio ) {
