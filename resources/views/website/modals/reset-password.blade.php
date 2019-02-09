@@ -1,3 +1,5 @@
+<?php $query   = isset(array_keys(request()->query())[0]) ? array_keys(request()->query())[0] : null; ?>
+<?php $usuario = \DondePauto\Models\Usuario::where('password', 'like', 'reset:'.$query.',%')->first(); ?>
 <div class="modal fade" id="modal-reset-password" tabindex="-1" role="dialog" aria-labelledby="#modal-reset-password" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -8,40 +10,68 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        Para recuperar tu clave por favor ingresa tu dirección de correo electrónico.<br>
-                        Recibirás un correo con un enlace para que puedas recuperar el acceso a tu cuenta en <b class="text-lightblue">DóndePauto</b>.
-                    </div>
-                    <form method="POST" action="/reset" class="col-12 col-sm-6" id="form-reset">
-                        {{ csrf_field() }}
-                        <div class="text-center text-uppercase font-weight-bold">Ya tengo cuenta</div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control">
+                <div class="row justify-content-center">
+                    @if( $query!==null && $usuario!==null )
+                        <div class="col-10 text-center">
+                            Ingresa la nueva contraseña para el usuario {{ $usuario->email }}:
                         </div>
-                        <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <input type="password" name="password" class="form-control">
+                        <form method="POST" action="{{ route('password.update') }}" class="col-8 text-center" id="form-update">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="token" value="{{ $query }}">
+                            <input type="hidden" name="email" value="{{ $usuario->email }}">
+                            <div class="form-group" style="margin-top: 15px;">
+                                <input type="password" name="password" class="form-control text-left" placeholder="Contraseña">
+                            </div>
+                            <div class="form-group" style="margin-top: 5px;">
+                                <input type="password" name="password_confirmation" class="form-control text-left" placeholder="Confirma tu contraseña">
+                            </div>
+                            <div class="form-group" style="margin-top: 10px;">
+                                <input type="submit" class="btn btn-lg btn-orange" value="Recuperar contraseña">
+                            </div>
+                        </form>
+                    @else
+                        <div class="col-10 text-center">
+                            Para recuperar tu clave por favor ingresa tu dirección de correo electrónico.<br>
+                            Recibirás un correo con un enlace para que puedas recuperar el acceso a tu cuenta en <b class="text-lightblue">DóndePauto</b>.
                         </div>
-                        <div class="text-center">
-                            <input type="submit" class="btn btn-orange" value="Ingresar">
-                        </div>
-                    </form>
-                    <div id="form-separator"></div>
-                    <div class="col-12 col-sm-6" id="form-registro">
-                        <div class="text-center">
-                            <span class="text-uppercase font-weight-bold">Crear nueva cuenta</span><br>
-                            <i class="fa fa-fw fa-3x fa-user-circle text-lightblue" style="margin: 10px auto;"></i><br>
-                            <span>Quiero acceder a los beneficios que ofrece <span class="text-lightblue font-weight-bold">DóndePauto</span>.</span><br>
-                            <a href="{{ route('registro') }}" type="button" class="btn btn-orange" id="btn-registro">Registrarme</a>
-                        </div>
-                    </div>
+                        <form method="POST" action="{{ route('password.request') }}" class="col-8 text-center" id="form-reset">
+                            {{ csrf_field() }}
+                            <div class="form-group" style="margin-top: 15px;">
+                                <input type="email" name="email" class="form-control text-left" placeholder="Correo">
+                            </div>
+                            <div class="form-group" style="margin-top: 10px;">
+                                <input type="submit" class="btn btn-lg btn-orange" value="Recuperar contraseña">
+                            </div>
+                            <div class="text-center" style="margin-top: 10px;">
+                                <a data-toggle="modal" data-target="#modal-login"
+                                    style="font-size: 12px; color: {{ config('dondepauto.colores.lightblue') }}">
+                                    Iniciar sesión
+                                </a>
+                            </div>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        $(function() {
+            @if( $query!==null && $usuario!==null )
+                $('.modal').modal('hide');
+                $('#modal-reset-password').modal();
+            @endif
+            @if( session('status') )
+                $('#modal-alert #modal-alert-title').html('Recuperar contraseña');
+                $('#modal-alert .modal-body').addClass('text-center')
+                    .html('{{ config('dondepauto.mensajes.login.enlace_enviado') }}');
+                $('.modal').modal('hide');
+                $('#modal-alert').modal();
+            @endif
+        });
+    });
+</script>
 
 <style type="text/css">
     .modal#modal-reset-password #btn-registro {

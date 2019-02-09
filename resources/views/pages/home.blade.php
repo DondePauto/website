@@ -24,29 +24,31 @@
     @if( !auth()->check() )
         @include('dondepauto::website.modals.home-registro')
     @endif
-    @if( !auth()->check() or !in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
-        @include('dondepauto::website.modals.login')
-        @include('dondepauto::website.modals.reset-password')
-    @endif
+    @include('dondepauto::website.modals.login')
+    @include('dondepauto::website.modals.reset-password')
 @endsection
 
 @section('css')
 <style type="text/css">
-    .home .h1 {
+    .home .h1,
+    .login .h1 {
         text-transform: uppercase;
         text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
     }
-    .home .h1 span:last-of-type {
+    .home .h1 span:last-of-type,
+    .login .h1 span:last-of-type {
         font-size: 1.5rem;
         line-height: 1.5rem;
         text-transform: none;
     }
     @media(min-width:576px) {
-        .home .h1 span:last-of-type {
+        .home .h1 span:last-of-type,
+        .login .h1 span:last-of-type {
             font-size: 2.25rem;
             line-height: 2.25rem;
         }
-        .home .h2 {
+        .home .h2,
+        .login .h2 {
             margin-bottom: 30px;
         }
     }

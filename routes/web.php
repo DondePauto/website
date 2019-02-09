@@ -42,7 +42,7 @@ Route::get('activar', function() {
 })->name('activar');
 
 Route::get('login', function() {
-    return redirect()->away(config('app.url'));
+    return view('dondepauto::pages.home');
 })->name('login');
 Route::post('login', function() {
     if( Illuminate\Support\Facades\Auth::attempt(request()->only(['email', 'password'])) ) {

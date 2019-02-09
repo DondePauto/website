@@ -103,10 +103,8 @@
     @if( !auth()->check() )
         @include('dondepauto::website.modals.home-registro')
     @endif
-    @if( !auth()->check() or !in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
-        @include('dondepauto::website.modals.login')
-        @include('dondepauto::website.modals.reset-password')
-    @endif
+    @include('dondepauto::website.modals.login')
+    @include('dondepauto::website.modals.reset-password')
 @endsection
 
 @section('css')

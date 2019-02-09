@@ -97,17 +97,16 @@
                     <input type="submit" value="Registrarme" class="btn btn-lg btn-orange" id="btn-submit">
                 </div>
                 <div class="col-12 text-center">
-                    ¿Ya estás registrado?, inicia sesión <a data-toggle="modal" data-target="#modal-login">aquí</a>
+                    ¿Ya estás registrado?, inicia sesión <a data-toggle="modal" data-target="#modal-login">aquí</a>.<br>
+                    ¿Olvidaste tu contraseña?, recuperala <a data-toggle="modal" data-target="#modal-reset-password">aquí</a>.<br>
                 </div>
             </form>
         </div>
     </div>
 
     {{-- MODALS --}}
-    @if( !auth()->check() or !in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
-        @include('dondepauto::website.modals.login')
-        @include('dondepauto::website.modals.reset-password')
-    @endif
+    @include('dondepauto::website.modals.login')
+    @include('dondepauto::website.modals.reset-password')
 @endsection
 
 @section('css')

@@ -25,11 +25,11 @@
 
     {{-- MODALS --}}
     @include('dondepauto::website.modals.asesoria')
-    @if( !auth()->check() or !in_array(auth()->user()->role->name, ['admin', 'anunciante']) )
+    @if( !auth()->check() )
         @include('dondepauto::website.modals.home-registro')
-        @include('dondepauto::website.modals.login')
-        @include('dondepauto::website.modals.reset-password')
     @endif
+    @include('dondepauto::website.modals.login')
+    @include('dondepauto::website.modals.reset-password')
 @endsection
 
 @section('css')

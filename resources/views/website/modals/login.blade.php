@@ -23,6 +23,12 @@
                         <div class="text-center">
                             <input type="submit" class="btn btn-orange" value="Ingresar">
                         </div>
+                        <div class="text-center" style="margin-top: 10px;">
+                            <a data-toggle="modal" data-target="#modal-reset-password"
+                                style="font-size: 12px; color: {{ config('dondepauto.colores.lightblue') }}">
+                                Recuperar contraseña
+                            </a>
+                        </div>
                     </form>
                     <div id="form-separator"></div>
                     <div class="col-12 col-sm-6" id="form-registro">
