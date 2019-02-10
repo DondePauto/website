@@ -69,16 +69,16 @@
                 @if( auth()->check() and in_array(auth()->user()->role->name, ['admin', 'medio']) )
                     <a class="nav-link btn btn-nav-orange" href="https://admin.dondepauto.co">Publicar medio</a>
                 @else
-                    <a class="nav-link btn btn-nav-orange" href="{{ config('app.url') }}/registro?medio">Publicar medio</a>
+                    <a class="nav-link btn btn-nav-orange" href="{{ config('app.url') }}/registro?medio&redirect={{ $CURRENT_URL }}">Publicar medio</a>
                 @endif
             </li>
             <li class="nav-item" id="link-registro">
-                <a class="nav-link" href="{{ config('app.url') }}/registro">Regístrate</a>
+                <a class="nav-link" href="{{ config('app.url') }}/registro?redirect={{ $CURRENT_URL }}">Regístrate</a>
             </li>
             <li class="nav-item" id="link-sesion">
                 @if( auth()->check() )
                     <a class="nav-link">
-                        <form method="POST" action="https://dondepauto.co/logout">
+                        <form method="POST" action="https://dondepauto.co/logout?redirect={{ $CURRENT_URL }}">
                             {{ csrf_field() }}
                             <input type="submit" class="btn btn-block" value="Cerrar sesión"
                                 style="padding: 0; font-weight: bold; color: white; border: none; background: none;"/>

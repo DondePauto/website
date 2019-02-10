@@ -56,7 +56,7 @@
                         </a>
                     </div>
                     <div class="sidebar-panel text-center" id="sidebar-registro">
-                        <a href="{{ config('app.url') }}/registro">
+                        <a href="{{ config('app.url') }}/registro?redirect={{ $CURRENT_URL }}">
                             <b style="font-size: 15px;">Si estás buscando pautar</b><br>
                             <b style="font-size: 25px;">REGÍSTRATE YA</b>
                         </a>

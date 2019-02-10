@@ -81,7 +81,8 @@
 
     #link-buscar a,
     #link-registro a,
-    #link-sesion a {
+    #link-sesion a,
+    #link-sesion input[type=submit] {
       color: $lightblue !important;
     }
 

@@ -1,3 +1,4 @@
+<?php $CURRENT_URL = preg_replace('/https?:\/\//', '', request()->fullUrl()); ?>
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 <head>

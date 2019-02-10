@@ -1,3 +1,4 @@
+<?php $CURRENT_URL = preg_replace('/https?:\/\//', '', request()->fullUrl()); ?>
 <div class="modal fade" id="modal-home-registro" tabindex="-1" role="dialog" aria-labelledby="#modal-home-registro" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -16,7 +17,7 @@
                             <div>
                                 <div class="voyager voyager-bubble"></div>
                                 ¿Quieres promocionar tu marca o producto en medios publicitarios?<br><br>
-                                <a href="/registro" class="btn btn-danger" role="button">Registro como Anunciante</a>
+                                <a href="/registro?anunciante&redirect={{ $CURRENT_URL }}" class="btn btn-danger" role="button">Registro como Anunciante</a>
                             </div>
                         </div>
                     </div>
@@ -26,7 +27,7 @@
                             <div>
                                 <div class="voyager voyager-megaphone"></div>
                                 ¿Tienes espacios publicitarios y quieres incrementar sus ventas?<br><br>
-                                <a href="/registro" class="btn btn-danger" role="button">Registro como Medio</a>
+                                <a href="/registro?medio&redirect={{ $CURRENT_URL }}" class="btn btn-danger" role="button">Registro como Medio</a>
                             </div>
                         </div>
                     </div>

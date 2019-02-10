@@ -1,3 +1,4 @@
+<?php $CURRENT_URL = preg_replace('/https?:\/\//', '', request()->fullUrl()); ?>
 <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="#modal-login" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -11,6 +12,7 @@
                 <div class="row">
                     <form method="POST" action="/login" class="col-12 col-sm-6" id="form-login">
                         {{ csrf_field() }}
+                        <input type="hidden" name="redirect" value="{{ $CURRENT_URL }}">
                         <div class="text-center text-uppercase font-weight-bold">Ya tengo cuenta</div>
                         <div class="form-group">
                             <label for="email">Email</label>

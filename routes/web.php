@@ -51,7 +51,10 @@ Route::post('login', function() {
         }
     }
 
-    return redirect()->away(config('app.url'));
+    if( request()->has('redirect') )
+        return redirect()->away('https://'.request()->redirect);
+    else
+        return redirect()->away(config('app.url'));
 });
 Route::post('logout', function() {
     $session = DB::table('sessions')->get()->first(function($session) {
@@ -63,7 +66,10 @@ Route::post('logout', function() {
     DB::table('sessions')->where('id', $session->id)->delete();
     auth()->logout();
 
-    return redirect()->away('https://dondepauto.co');
+    if( request()->has('redirect') )
+        return redirect()->away('https://'.request()->redirect);
+    else
+        return redirect()->away(config('app.url'));
 });
 
 Route::get('espacios/{espacio}', function( \DondePauto\Models\Espacio $espacio ) {

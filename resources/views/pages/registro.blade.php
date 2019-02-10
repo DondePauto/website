@@ -10,8 +10,8 @@
             <form method="POST" action="https://dondepauto.co/registro" class="row justify-content-center text-left form">
                 {{ csrf_field() }}
                 <input type="hidden" name="validate_email" value="true">
-                @if( request()->has('medio') )
-                    <input type="hidden" name="redirect" value="https://admin.dondepauto.co/espacios-crear">
+                @if( request()->has('redirect') )
+                    <input type="hidden" name="redirect" value="https://{{ request()->redirect }}">
                 @endif
                 <div class="col-12 col-sm-6 form-group animated">
                     <label for="nombre">Nombre <b class="text-danger">*</b></label>
