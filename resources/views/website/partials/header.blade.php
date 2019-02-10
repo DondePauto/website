@@ -1,3 +1,15 @@
+@if( auth()->check() and auth()->user()->role->name=='anunciante' and !auth()->user()->empresa->estado->registro_completo )
+    <?php $token = substr(sha1(Carbon\Carbon::now()->toDateTimeString()), 0, 20); ?>
+    <?php $token = (strpos(auth()->user()->password, 'code:')===0) ? str_replace('code:', '', auth()->user()->password) : $token; ?>
+    <div class="text-center" id="header-notification">
+        <b>Completa los datos de tu registro <a href="https://dondepauto.co/activar?{{ $token }}">aquí</a>.</b>
+    </div>
+    <style type="text/css">
+        div#header-notification { padding: 2.5px; width: 100vw; color: white; background: {{ config('dondepauto.colores.red') }}; position: fixed;z-index: 2000; }
+        div#header-notification a { color: white; text-decoration: underline; }
+        header.navbar { top: 29px; }
+    </style>
+@endif
 <header class="navbar navbar-expand-sm fixed-top @yield('navbar-bg', 'bg-transparent')">
     <a href="{{ route('home') }}" class="navbar-brand">
         <img src="{{ route('files.brand', ['path' => 'logo-light_-h35']) }}" class="d-inline d-sm-none">
