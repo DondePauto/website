@@ -19,7 +19,7 @@
                                     <div class="card-title">
                                         <b>{{ $blog->titulo }}</b>
                                     </div>
-                                    <a href="/blog/{{ $blog->slug }}" type="button" class="btn btn-danger btn-leer">
+                                    <a type="button" target="_blank" href="/blog/{{ $blog->slug }}" class="btn btn-danger btn-leer">
                                         <b>Leer</b>
                                     </a>
                                 </div>
