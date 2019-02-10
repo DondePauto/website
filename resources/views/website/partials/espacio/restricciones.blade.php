@@ -1,4 +1,4 @@
-@if( !empty($espacio->data->restricciones) )
+@if( !empty($espacio->data->restricciones) and $espacio->data->restricciones[0]!=='' )
     <div class="row">
         <div class="section-header">
             <i class="fa fa-fw fa-lg fa-times-circle-o text-danger"></i>&nbsp;Restricciones
