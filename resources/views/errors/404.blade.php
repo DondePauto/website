@@ -5,7 +5,7 @@
         <div class="full-viewport" id="not-found"></div>
         <div class="full-width vertical-center-content">
             <h1 class="heading">
-                <span><img src="//files.dondepauto.co/brand/icon_-h150-cwhite.png"></span>
+                <span><img src="//s3.amazonaws.com/3387999ee42855936824-files/brand/icon_-h150-cwhite.png"></span>
                 <span><br>La página que buscas no existe</span>
             </h1>
             <div id="form">

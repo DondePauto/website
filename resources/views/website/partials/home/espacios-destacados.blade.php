@@ -6,7 +6,7 @@
             @foreach( DondePauto\Models\Espacio::destacados() as $espacio )
                 <div class="col-6 col-sm-3">
                     <div class="card card-espacio">
-                        <div class="card-img-top" style="background-image:url(//files.dondepauto.co/{{ $espacio->miniatura }});"></div>
+                        <div class="card-img-top" style="background-image:url({{ $espacio->thumbnail }});"></div>
                         <div class="card-body text-center">
                             <div class="card-title">{{ $espacio->titulo }}</div>
                             <hr class="card-separator">

@@ -3,7 +3,7 @@
 @section('navbar-bg', 'bg-opaque')
 
 @section('title', config('app.name').' - '.$espacio->titulo)
-@section('image', '//files.dondepauto.co/'.$espacio->miniatura)
+@section('image', $espacio->thumbnail)
 
 @section('content')
     <div class="row espacio-content">
@@ -33,7 +33,7 @@
             @foreach( $espacio->relacionados() as $relacionado )
                 <div class="col-6 col-sm-3">
                     <div class="card card-espacio">
-                        <div class="card-img-top" style="background-image:url(//files.dondepauto.co/{{ $relacionado->miniatura }});"></div>
+                        <div class="card-img-top" style="background-image:url({{ $relacionado->thumbnail }});"></div>
                         <div class="card-body text-center">
                             <div class="card-title">{{ $relacionado->titulo }}</div>
                             <hr class="card-separator">

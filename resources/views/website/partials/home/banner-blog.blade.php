@@ -11,7 +11,7 @@
                     <div class="card card-blog">
                         <div class="row">
                             <div class="col-12 col-sm-6">
-                                <div class="card-img-top" style="background-image: url(//files.dondepauto.co/{{ $blog->miniatura }});"></div>
+                                <div class="card-img-top" style="background-image: url(//s3.amazonaws.com/3387999ee42855936824-files/{{ $blog->miniatura }});"></div>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="card-body">

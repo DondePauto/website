@@ -10,13 +10,13 @@
     <div class="col-12 col-sm-8">
         <div class="carousel slide" id="carousel-imagenes" data-ride="carousel">
             <ol class="carousel-indicators">
-                @foreach( $espacio->imagenes as $imagen )
+                @foreach( $espacio->images as $imagen )
                     <li data-target="#carousel-imagenes" data-slide-to="{{ $loop->index }}" {{ $loop->first ? 'class=active' : '' }}></li>
                 @endforeach
             </ol>
             <div class="carousel-inner">
-                @foreach( $espacio->imagenes as $imagen )
-                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}" style="background-image: url(//files.dondepauto.co/{{ $imagen }})"></div>
+                @foreach( $espacio->images as $imagen )
+                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}" style="background-image: url({{ $imagen }})"></div>
                 @endforeach
             </div>
         </div>
