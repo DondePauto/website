@@ -6,6 +6,7 @@
 @section('image', '//s3.amazonaws.com/3387999ee42855936824-files/'.$blog->miniatura)
 
 @section('content')
+    <?php $CURRENT_URL = preg_replace('/https?:\/\//', '', request()->fullUrl()); ?>
     <div class="row blog-content">
         <div class="container-fluid">
             <div class="row justify-content-center">

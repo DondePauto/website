@@ -3,6 +3,7 @@
 @section('navbar-bg', 'bg-opaque')
 
 @section('content')
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <div class="row registro-content">
         <div class="container-fluid text-center">
             <h1 class="h1">Crea tu cuenta y accede a los servicios y herramientas que te ofrece DóndePauto.CO</h1>
@@ -82,7 +83,7 @@
                         </div>
                     </label>
                 </div>
-                <div class="col-12 text-left" id="consent">
+                <div class="col-6 text-left" id="consent">
                     <input type="hidden" name="consent" value="yes">
                     <input type="hidden" name="consent_timestamp" value="{{ time() }}">
                     <span>
@@ -92,6 +93,12 @@
                             y la <a href="{{ route('documento', ['documento' => 'politica-privacidad']) }}">política de tratamiento de datos</a> de DóndePauto.
                         </span>
                     </span>
+                </div>
+                <div class="col-6 text-left">
+                    @if( $errors->first('captcha') )
+                        <div class="feedback text-danger" id="feedback-captcha">{{ $errors->first('captcha') }}</div>
+                    @endif
+                    <div class="g-recaptcha" data-sitekey="6LcBtpwUAAAAAFehpm8J4OETM8KQPMm182_TMGwK"></div>
                 </div>
                 <div class="col-12 text-center">
                     <input type="submit" value="Registrarme" class="btn btn-lg btn-orange" id="btn-submit">
