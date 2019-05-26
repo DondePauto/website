@@ -18,7 +18,10 @@
                 </div>
             </div>
             <div class="col-12 col-sm-4" id="form-register">
-                <div class="text-center">
+                <form method="POST" action="https://dondepauto.co/registro" class="text-center">
+                    {{  csrf_field() }}
+                    <input type="hidden" name="fuente_registro" value="asesoria">
+                    <input type="hidden" name="role" value="anunciante">
                     <div style="margin-bottom: 10px;">
                         <b>En DóndePauto te ayudamos a encontrar el medio publicitario que estás buscando</b>
                     </div>
@@ -33,15 +36,26 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="nombre">Correo electrónico</label>
+                        <label for="email">Correo electrónico</label>
                         <input type="email" name="email" class="form-control form-control-sm" required>
                     </div>
                     <div class="form-group">
-                        <label for="nombre">Celular</label>
+                        <label for="celular">Celular</label>
                         <input type="text" name="celular" class="form-control form-control-sm" required>
                     </div>
                     <input type="submit" id="btn-banner-registro-submit" class="btn" value="Solicitar asesoría">
-                </div>
+                    <script type="text/javascript">
+                        document.addEventListener("DOMContentLoaded", function() {
+                            $('#form-register form').submit(function() {
+                                alert([
+                                    'Hemos recibido tu solicitud de asesoría.',
+                                    'Muy pronto nos pondremos en contacto contigo para ayudarte con toda la información que necesites.'
+                                ].join('\n'));
+                                return true;
+                            });
+                        });
+                    </script>
+                </form>
                 <div class="text-center">
                     <?php $phone = json_decode(setting('contacto.telefonos'))[0]; ?>
                     <b>¡Llámanos ya! {{ $phone->valor }}</b><hr>
