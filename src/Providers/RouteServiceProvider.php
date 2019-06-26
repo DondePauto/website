@@ -39,5 +39,10 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web', \DondePauto\Http\Middleware\CheckRole::class)
             ->namespace($this->namespace)
             ->group(realpath(__DIR__.'/../../routes/web.php'));
+
+        Route::domain('s.'.env('APP_DOMAIN'))
+            ->middleware('web', \DondePauto\Http\Middleware\CheckRole::class)
+            ->namespace($this->namespace)
+            ->group(realpath(__DIR__.'/../../routes/web.php'));
     }
 }
