@@ -15,7 +15,7 @@
                             </div>
                             <div class="col-12 col-sm-6">
                                 <div class="card-body">
-                                    <div class="fecha">{{ $blog->fecha }}</div>
+                                    <!-- <div class="fecha">{{ $blog->fecha }}</div> -->
                                     <div class="card-title">
                                         <b>{{ $blog->titulo }}</b>
                                     </div>

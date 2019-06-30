@@ -12,7 +12,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <img src="//files.dondepauto.co/{{ $blog->miniatura }}" style="width: 100%; margin-bottom: 7.5px;">
-                    <div class="text-left" style="margin: 7.5px 0; color: #888;">{{ $blog->fecha }}</div>
+                    <!-- <div class="text-left" style="margin: 7.5px 0; color: #888;">{{ $blog->fecha }}</div> -->
                     <h1 class="h1">{{ $blog->titulo }}</h1>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="card-body">
-                                                    <div class="fecha">{{ $reciente->fecha }}</div>
+                                                    <!-- <div class="fecha">{{ $reciente->fecha }}</div> -->
                                                     <div class="card-title">
                                                         <b>{{ $reciente->titulo }}</b>
                                                     </div>

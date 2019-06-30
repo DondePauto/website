@@ -19,9 +19,11 @@
                 <div class="row text-left" style="width: calc(100% - 60px); margin: 0 30px;">
                     <div class="col-12">
                         <img src="//files.dondepauto.co/{{ $ultimo->miniatura }}" style="width: 100%; margin-bottom: 15px;">
+                        <!--
                         <div class="fecha" style="margin-bottom: 5px; font-size: 15px; color: {{ config('dondepauto.colores.gray') }};">
                             {{ $ultimo->fecha }}
                         </div>
+                        -->
                         <h2 class="h2" style="font-size: 25px; color: {{ config('dondepauto.colores.darkgray') }};">
                             {{ $ultimo->titulo }}
                         </h2>
@@ -45,7 +47,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <div class="card-body">
-                                            <div class="fecha">{{ $blog->fecha }}</div>
+                                            <!-- <div class="fecha">{{ $blog->fecha }}</div> -->
                                             <div class="card-title">
                                                 <b>{{ $blog->titulo }}</b>
                                             </div>
