@@ -35,7 +35,7 @@ Route::get('blog', function() {
 
 Route::get('activar', function() {
     $codigo  = isset(array_keys(request()->query())[0]) ? array_keys(request()->query())[0] : null;
-    $usuario = \DondePauto\Models\Usuario::where('password', 'like', 'code:'.$codigo)->first();
+    $usuario = \DondePauto\Models\Usuario::where('activation_token', $codigo)->first();
     $role    = DB::table('roles')->where('id', $usuario->role_id)->first();
 
     return view('dondepauto::pages.activar-'.$role->name, compact('usuario', 'codigo'));

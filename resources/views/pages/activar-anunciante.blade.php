@@ -87,16 +87,6 @@
                             <input type="text" name="direccion" class="form-control">
                             <div class="feedback text-danger" id="feedback-direccion"></div>
                         </div>
-                        <div class="col-6 form-group animated">
-                            <label for="contrasena">Contraseña  <b class="text-danger">*</b></label>
-                            <input type="password" name="contrasena" class="form-control">
-                            <div class="feedback text-danger" id="feedback-contrasena"></div>
-                        </div>
-                        <div class="col-6 form-group animated">
-                            <label for="contrasena_confirmation">Confirmar contraseña  <b class="text-danger">*</b></label>
-                            <input type="password" name="contrasena_confirmation" class="form-control">
-                            <div class="feedback text-danger" id="feedback-contrasena_confirmation"></div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-12 text-center">

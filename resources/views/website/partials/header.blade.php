@@ -1,6 +1,6 @@
-@if( auth()->check() and auth()->user()->role->name=='anunciante' and !auth()->user()->empresa->estado->registro_completo )
+@if( request()->route()->getName()!='activar' and auth()->check() and auth()->user()->role->name=='anunciante' and !auth()->user()->empresa->estado->registro_completo )
     <?php $token = substr(sha1(Carbon\Carbon::now()->toDateTimeString()), 0, 20); ?>
-    <?php $token = (strpos(auth()->user()->password, 'code:')===0) ? str_replace('code:', '', auth()->user()->password) : $token; ?>
+    <?php $token = isset(auth()->user()->activation_token) ? auth()->user()->activation_token : $token; ?>
     <div class="text-center" id="header-notification">
         <b>Completa los datos de tu registro <a href="https://dondepauto.co/activar?{{ $token }}">aquí</a>.</b>
     </div>

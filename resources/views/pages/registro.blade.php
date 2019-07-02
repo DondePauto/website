@@ -49,6 +49,20 @@
                         <div class="feedback text-danger" id="feedback-empresa">{{ $errors->first('empresa') }}</div>
                     @endif
                 </div>
+                <div class="col-12 col-sm-6 form-group animated">
+                    <label for="contrasena">Contraseña  <b class="text-danger">*</b></label>
+                    <input type="password" name="contrasena" class="form-control">
+                    @if( $errors->has('contrasena') )
+                        <div class="feedback text-danger" id="feedback-contrasena">{{ $errors->first('contrasena') }}</div>
+                    @endif
+                </div>
+                <div class="col-12 col-sm-6 form-group animated">
+                    <label for="contrasena_confirmation">Confirmar contraseña  <b class="text-danger">*</b></label>
+                    <input type="password" name="contrasena_confirmation" class="form-control">
+                    @if( $errors->has('contrasena_confirmation') )
+                        <div class="feedback text-danger" id="feedback-contrasena_confirmation">{{ $errors->first('contrasena_confirmation') }}</div>
+                    @endif
+                </div>
                 <div class="col-12 text-center">
                     <b class="text-lightblue">Selecciona cómo deseas registrarte en DóndePauto:</b>
                     @if( $errors->has('role') )

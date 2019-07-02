@@ -17,8 +17,6 @@ export default {
                     'celular': $('.form [name=celular]').val(),
                     'ciudad': $('.form [name=ciudad]').val(),
                     'direccion': $('.form [name=direccion]').val(),
-                    'contrasena': $('.form [name=contrasena]').val(),
-                    'contrasena_confirmation': $('.form [name=contrasena_confirmation]').val(),
                 }, function() {
                     window.location.href = '/';
                 }).fail(function(error) {
